@@ -1,2 +1,6 @@
 res://Scenes/player.tscn
 res://Scenes/player.gd
+res://Scenes/tutorial_game.tscn
+res://Scenes/pine_tree.tscn
+res://Scenes/mob.tscn
+res://characters/slime/slime.tscn
