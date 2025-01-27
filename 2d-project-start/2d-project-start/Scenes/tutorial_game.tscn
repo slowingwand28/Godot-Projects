@@ -49,7 +49,6 @@ offset_right = 891.0
 offset_bottom = -436.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
-text = "Score"
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true

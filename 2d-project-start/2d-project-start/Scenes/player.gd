@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 
-var max_health = 100.0
 var health = 100.0
-var kill_count = 0
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
