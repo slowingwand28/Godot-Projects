@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcmso05blwfu4"]
+[gd_scene load_steps=8 format=3 uid="uid://bcmso05blwfu4"]
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4kbk6"]
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_nly4q"]
@@ -8,7 +8,26 @@
 radius = 38.0
 height = 108.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_488ox"]
+radius = 49.0
+height = 124.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcrqf"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd822"]
+bg_color = Color(0.164293, 0.561798, 0.899754, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 4294901760
 script = ExtResource("1_nly4q")
 
 [node name="HappyBoo" parent="." instance=ExtResource("1_4kbk6")]
@@ -18,7 +37,26 @@ position = Vector2(0, 31)
 position = Vector2(-2, -14)
 shape = SubResource("CapsuleShape2D_ue1d8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Gun" parent="." instance=ExtResource("3_eng6h")]
 position = Vector2(-1, -9)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -14)
+shape = SubResource("CapsuleShape2D_488ox")
+debug_color = Color(0.829363, 0.382001, 0.265389, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -103.0
+offset_top = -108.0
+offset_right = 105.0
+offset_bottom = -81.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pcrqf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xd822")
+value = 100.0
+show_percentage = false
