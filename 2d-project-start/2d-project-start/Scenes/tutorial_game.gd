@@ -19,4 +19,4 @@ func _on_player_health_depleted():
 
 func _on_dead():
 	score += 1
-	$Player/Camera2D/ScoreBoard.text = str(score)
+	$Player/Camera2D/ScoreBoard.text = "Score: " + str(score)
