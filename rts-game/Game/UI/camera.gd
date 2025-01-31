@@ -20,12 +20,16 @@ func _process(delta: float) -> void:
 		endV = mousePos
 		draw_area()
 	if Input.is_action_just_released("LeftClick"):
-		if startV.direction_to(mousePos) > 20:
+		if startV.distance_to(mousePos) > 20:
 			end = mousePosGlobal
 			endV = mousePos
 			isDragging = false
 			draw_area(false)
 			area_selected.emit()
+		else:
+			end = start
+			isDragging = false
+			draw_area(false)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouse:
