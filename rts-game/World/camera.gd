@@ -9,6 +9,7 @@ var endV = Vector2()
 var isDragging = false
 signal area_selected
 signal start_move_selection
+@onready var box = $"../UI/Panel"
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
@@ -37,9 +38,9 @@ func _input(event: InputEvent) -> void:
 		mousePosGlobal = get_global_mouse_position()
 
 func draw_area(s = true):
-	$"../Panel".size = Vector2(abs(startV.x - endV.x), abs(startV.y - endV.y))
+	box.size = Vector2(abs(startV.x - endV.x), abs(startV.y - endV.y))
 	var pos = Vector2()
 	pos.x = min(startV.x, endV.x)
 	pos.y = min(startV.y, endV.y)
-	$"../Panel".position = pos
-	$"../Panel".size *= int(s)
+	box.position = pos
+	box.size *= int(s)

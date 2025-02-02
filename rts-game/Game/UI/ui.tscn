@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2nkq8fra0k8y"]
-
-[ext_resource type="Script" path="res://Game/UI/camera.gd" id="1_fugr2"]
+[gd_scene load_steps=2 format=3 uid="uid://b2nkq8fra0k8y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mybni"]
-bg_color = Color(0.475062, 0.625772, 0.949546, 0.498039)
+bg_color = Color(0.47451, 0.627451, 0.94902, 0.313726)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
@@ -16,12 +14,5 @@ corner_radius_bottom_left = 2
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="Camera" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-script = ExtResource("1_fugr2")
-
 [node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mybni")
