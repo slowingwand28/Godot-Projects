@@ -9,7 +9,7 @@ var endV = Vector2()
 var isDragging = false
 signal area_selected
 signal start_move_selection
-@onready var box = $"../UI/Panel"
+@onready var box = $"../Panel"
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
