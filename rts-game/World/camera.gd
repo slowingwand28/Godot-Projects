@@ -11,9 +11,6 @@ signal area_selected
 signal start_move_selection
 @onready var box = $"../UI/Panel"
 
-func _ready() -> void:
-	area_selected.connect(Callable(self, "_on_area_selected"))
-
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
 		start = mousePosGlobal
@@ -29,7 +26,7 @@ func _process(delta: float) -> void:
 			endV = mousePos
 			isDragging = false
 			draw_area(false)
-			area_selected.emit()
+			area_selected.emit(start, end)
 		else:
 			end = start
 			isDragging = false

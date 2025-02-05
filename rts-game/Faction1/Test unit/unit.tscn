@@ -8,10 +8,10 @@ size = Vector2(42, 68)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 border_blend = true
 
