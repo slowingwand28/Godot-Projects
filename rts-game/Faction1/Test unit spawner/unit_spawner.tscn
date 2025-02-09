@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd7a8u71o5lap"]
+
+[ext_resource type="Script" path="res://Faction1/Test unit spawner/unit_spawner.gd" id="1_qakxe"]
+[ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Test unit spawner/Test Building.png" id="1_repii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
+size = Vector2(110.5, 101.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iig5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.180392, 0.239216, 0.878431, 1)
+border_blend = true
+
+[node name="Unit Spawner" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_qakxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(381, 212)
+texture = ExtResource("1_repii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(377.75, 233.75)
+shape = SubResource("RectangleShape2D_hunp0")
+
+[node name="Box" type="Panel" parent="."]
+offset_left = 287.0
+offset_top = 118.0
+offset_right = 468.0
+offset_bottom = 285.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

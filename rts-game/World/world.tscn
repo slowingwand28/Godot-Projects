@@ -3,10 +3,22 @@
 [ext_resource type="Script" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_44d2v"]
 [ext_resource type="PackedScene" uid="uid://b2nkq8fra0k8y" path="res://Game/UI/ui.tscn" id="1_yla30"]
-[ext_resource type="PackedScene" uid="uid://q8co5f0wnjhm" path="res://Faction1/Test unit/unit.tscn" id="2_hotw8"]
+[ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Test unit spawner/unit_spawner.tscn" id="5_g0qk1"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_44d2v")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -59.0
+offset_top = -68.0
+offset_right = 1201.0
+offset_bottom = 710.0
+mouse_filter = 1
+color = Color(0.177237, 0.445823, 0.169808, 1)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(577, 324)
@@ -14,7 +26,10 @@ script = ExtResource("1_6jbkn")
 
 [node name="UI" parent="." instance=ExtResource("1_yla30")]
 
-[node name="Unit" parent="." instance=ExtResource("2_hotw8")]
-position = Vector2(559, 306)
+[node name="Friendly Units" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Unit Spawner" parent="." instance=ExtResource("5_g0qk1")]
+position = Vector2(38, 75)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]

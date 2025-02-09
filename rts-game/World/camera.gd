@@ -65,15 +65,11 @@ func Pan(delta):
 	var panAmount = Vector2.ZERO
 	if Input.is_action_pressed("Camera Right"):
 		panAmount.x += 1
-		print("D")
 	if Input.is_action_pressed("Camera Left"):
 		panAmount.x -= 1
-		print("A")
 	if Input.is_action_pressed("Camera Up"):
 		panAmount.y -= 1
-		print("W")
 	if Input.is_action_pressed("Camera Down"):
 		panAmount.y += 1
-		print("S")
 	panAmount = panAmount.normalized()
 	position += panAmount * delta * panSpeed * (1 / zoom.x)

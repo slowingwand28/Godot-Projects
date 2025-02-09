@@ -1,7 +1,12 @@
 extends Node2D
 
-@onready var friendly_units = get_tree().get_nodes_in_group("Friendly Units")
+var friendly_units = []
 
+func _ready() -> void:
+	get_units()
+
+func get_units():
+	friendly_units = get_tree().get_nodes_in_group("Friendly Units")
 
 func _on_camera_area_selected(start, end) -> void:
 	var area = []

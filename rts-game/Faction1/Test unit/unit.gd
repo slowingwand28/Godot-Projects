@@ -3,8 +3,9 @@ extends CharacterBody2D
 @export var selected = false
 @onready var box = $Box
 @onready var target = position
+@export var speed = 200.0
 var follow_cursor = false
-var speed = 150.0
+var mouseEntered = false
 
 func _ready() -> void:
 	set_selected(selected)
@@ -15,6 +16,12 @@ func set_selected(value):
 	box.visible = value
 
 func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("LeftClick")) and (mouseEntered == true):
+		if selected == false:
+			set_selected(true)
+		else:
+			set_selected(false)
+	
 	if event.is_action_pressed("RightClick"):
 		follow_cursor = true
 	if event.is_action_released("RightClick"):
@@ -25,5 +32,11 @@ func _physics_process(delta: float) -> void:
 		if selected:
 			target = get_global_mouse_position()
 	velocity = position.direction_to(target) * speed
-	if position.distance_to(target) > 15:
+	if position.distance_to(target) > 10:
 		move_and_slide()
+
+func _on_mouse_entered() -> void:
+	mouseEntered = true
+
+func _on_mouse_exited() -> void:
+	mouseEntered = false

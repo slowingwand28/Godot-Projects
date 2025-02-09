@@ -13,9 +13,10 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
-border_blend = true
 
 [node name="Unit" type="CharacterBody2D" groups=["Friendly Units"]]
+y_sort_enabled = true
+input_pickable = true
 script = ExtResource("1_c62ov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,8 +26,12 @@ shape = SubResource("RectangleShape2D_ix7du")
 texture = ExtResource("2_dnymg")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -22.0
-offset_top = -35.0
-offset_right = 22.0
-offset_bottom = 35.0
+offset_left = -24.0
+offset_top = -37.0
+offset_right = 24.0
+offset_bottom = 37.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

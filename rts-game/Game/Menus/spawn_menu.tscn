@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://6d6o4b8mi8v5"]
+
+[ext_resource type="Script" path="res://Game/Menus/spawn_menu.gd" id="1_37c02"]
+[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Test unit/unit-placeholder.png" id="1_ecgw7"]
+
+[node name="Spawn Menu" type="Node2D"]
+script = ExtResource("1_37c02")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 200.0
+offset_top = 72.0
+offset_right = 768.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 104.0
+offset_right = 528.0
+offset_bottom = 127.0
+text = "Spawn Unit?"
+
+[node name="Yes" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 296.0
+offset_right = 384.0
+offset_bottom = 352.0
+text = "Yes"
+
+[node name="No" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 296.0
+offset_right = 688.0
+offset_bottom = 352.0
+text = "No"
+
+[node name="Placeholder Sprite" type="Sprite2D" parent="."]
+position = Vector2(480, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ecgw7")
+
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_no_pressed"]
