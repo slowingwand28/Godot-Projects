@@ -13,8 +13,6 @@ func _on_camera_area_selected(start, end) -> void:
 	area.append(Vector2(min(start.x, end.x), min(start.y, end.y)))
 	area.append(Vector2(max(start.x, end.x), max(start.y, end.y)))
 	var units_in_area = get_units_in_area(area)
-	for unit in friendly_units:
-		unit.set_selected(false)
 	for unit in units_in_area:
 		unit.set_selected(true)
 

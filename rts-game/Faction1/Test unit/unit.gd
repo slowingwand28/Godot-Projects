@@ -21,6 +21,9 @@ func _input(event: InputEvent) -> void:
 			set_selected(true)
 		else:
 			set_selected(false)
+	if (event.is_action_pressed("LeftClick")) and (mouseEntered == false):
+		if selected == true:
+			set_selected(false)
 	
 	if event.is_action_pressed("RightClick"):
 		follow_cursor = true

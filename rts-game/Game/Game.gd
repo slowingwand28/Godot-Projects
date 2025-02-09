@@ -6,7 +6,9 @@ var resorces = 0
 @onready var spawner = preload("res://Game/Menus/spawn_menu.tscn")
 
 
-func spawnUnit():
+func spawnUnit(position):
 	var path = get_tree().get_root().get_node("World/UI")
-	var spawnMenu = spawner.instantiate()
-	path.add_child(spawnMenu)
+	if not path.has_node("Spawn Menu"):
+		var spawnMenu = spawner.instantiate()
+		spawnMenu.housePos = position
+		path.add_child(spawnMenu)

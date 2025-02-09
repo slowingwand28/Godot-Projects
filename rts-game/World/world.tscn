@@ -29,7 +29,9 @@ script = ExtResource("1_6jbkn")
 [node name="Friendly Units" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Unit Spawner" parent="." instance=ExtResource("5_g0qk1")]
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="Unit Spawner" parent="Buildings" instance=ExtResource("5_g0qk1")]
 position = Vector2(38, 75)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]
