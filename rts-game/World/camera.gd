@@ -1,5 +1,9 @@
 extends Camera2D
 
+var zoomTarget:Vector2
+@export var zoomSpeed = 10.0
+@export var panSpeed = 1000.0
+
 var mousePos = Vector2()
 var mousePosGlobal = Vector2()
 var start = Vector2()
@@ -8,10 +12,15 @@ var end = Vector2()
 var endV = Vector2()
 var isDragging = false
 signal area_selected
-signal start_move_selection
 @onready var box = $"../UI/Panel"
 
+func _ready() -> void:
+	zoomTarget = zoom
+
 func _process(delta: float) -> void:
+	Zoom(delta)
+	Pan(delta)
+	
 	if Input.is_action_just_pressed("LeftClick"):
 		start = mousePosGlobal
 		startV = mousePos
@@ -44,3 +53,27 @@ func draw_area(s = true):
 	pos.y = min(startV.y, endV.y)
 	box.position = pos
 	box.size *= int(s)
+
+func Zoom(delta):
+	if Input.is_action_just_pressed("Zoom In"):
+		zoomTarget *= 1.1
+	if Input.is_action_just_pressed("Zoom Out"):
+		zoomTarget *= 0.9
+	zoom = zoom.slerp(zoomTarget, zoomSpeed * delta)
+
+func Pan(delta):
+	var panAmount = Vector2.ZERO
+	if Input.is_action_pressed("Camera Right"):
+		panAmount.x += 1
+		print("D")
+	if Input.is_action_pressed("Camera Left"):
+		panAmount.x -= 1
+		print("A")
+	if Input.is_action_pressed("Camera Up"):
+		panAmount.y -= 1
+		print("W")
+	if Input.is_action_pressed("Camera Down"):
+		panAmount.y += 1
+		print("S")
+	panAmount = panAmount.normalized()
+	position += panAmount * delta * panSpeed * (1 / zoom.x)
