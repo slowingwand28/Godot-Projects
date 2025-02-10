@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc0cygiwodjxs"]
+
+[ext_resource type="Texture2D" uid="uid://enxg7opwawu8" path="res://Faction1/Buildings/Test Resource Building/Test Resource Building.png" id="1_24wv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
+size = Vector2(110.5, 101.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iig5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.180392, 0.239216, 0.878431, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tosxc"]
+bg_color = Color(0.154627, 0.68611, 0.646531, 1)
+
+[node name="Resource Building" type="StaticBody2D"]
+input_pickable = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(381, 212)
+texture = ExtResource("1_24wv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(377.75, 233.75)
+shape = SubResource("RectangleShape2D_hunp0")
+
+[node name="Box" type="Panel" parent="."]
+visible = false
+offset_left = 287.0
+offset_top = 118.0
+offset_right = 468.0
+offset_bottom = 285.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 281.0
+offset_top = 81.0
+offset_right = 476.0
+offset_bottom = 108.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_tosxc")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]

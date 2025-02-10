@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dalybkigwdeb4"
-path="res://.godot/imported/unit-placeholder.png-a3284d6ace31afa67d9d6b0a31fc4f82.ctex"
+uid="uid://enxg7opwawu8"
+path="res://.godot/imported/Test Resource Building.png-3ad52cac2991fb06d794aa85bb6ed1b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Test unit/unit-placeholder.png"
-dest_files=["res://.godot/imported/unit-placeholder.png-a3284d6ace31afa67d9d6b0a31fc4f82.ctex"]
+source_file="res://Faction1/Buildings/Test Resource Building/Test Resource Building.png"
+dest_files=["res://.godot/imported/Test Resource Building.png-3ad52cac2991fb06d794aa85bb6ed1b2.ctex"]
 
 [params]
 

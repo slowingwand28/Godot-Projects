@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_44d2v"]
 [ext_resource type="PackedScene" uid="uid://b2nkq8fra0k8y" path="res://Game/UI/ui.tscn" id="1_yla30"]
-[ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Test unit spawner/unit_spawner.tscn" id="5_g0qk1"]
+[ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Buildings/Test unit spawner/unit_spawner.tscn" id="5_g0qk1"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cd7a8u71o5lap"]
 
-[ext_resource type="Script" path="res://Faction1/Test unit spawner/unit_spawner.gd" id="1_qakxe"]
-[ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Test unit spawner/Test Building.png" id="1_repii"]
+[ext_resource type="Script" path="res://Faction1/Buildings/Test unit spawner/unit_spawner.gd" id="1_qakxe"]
+[ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Buildings/Test unit spawner/Test Building.png" id="1_repii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
 size = Vector2(110.5, 101.5)
@@ -28,6 +28,7 @@ position = Vector2(377.75, 233.75)
 shape = SubResource("RectangleShape2D_hunp0")
 
 [node name="Box" type="Panel" parent="."]
+visible = false
 offset_left = 287.0
 offset_top = 118.0
 offset_right = 468.0

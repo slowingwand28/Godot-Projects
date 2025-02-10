@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6d6o4b8mi8v5"]
 
 [ext_resource type="Script" path="res://Game/Menus/spawn_menu.gd" id="1_37c02"]
-[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Test unit/unit-placeholder.png" id="1_ecgw7"]
+[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="1_ecgw7"]
 
 [node name="Spawn Menu" type="Node2D"]
 script = ExtResource("1_37c02")
