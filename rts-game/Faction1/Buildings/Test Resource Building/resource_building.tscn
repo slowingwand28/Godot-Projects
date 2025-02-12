@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc0cygiwodjxs"]
+[gd_scene load_steps=6 format=3 uid="uid://cc0cygiwodjxs"]
 
 [ext_resource type="Texture2D" uid="uid://enxg7opwawu8" path="res://Faction1/Buildings/Test Resource Building/Test Resource Building.png" id="1_24wv6"]
+[ext_resource type="Script" path="res://Faction1/Buildings/Test Resource Building/resource_building.gd" id="1_nswjq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
 size = Vector2(110.5, 101.5)
@@ -19,30 +20,34 @@ bg_color = Color(0.154627, 0.68611, 0.646531, 1)
 
 [node name="Resource Building" type="StaticBody2D"]
 input_pickable = true
+script = ExtResource("1_nswjq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(381, 212)
+position = Vector2(3, -22)
 texture = ExtResource("1_24wv6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(377.75, 233.75)
+position = Vector2(-0.25, -0.25)
 shape = SubResource("RectangleShape2D_hunp0")
 
 [node name="Box" type="Panel" parent="."]
 visible = false
-offset_left = 287.0
-offset_top = 118.0
-offset_right = 468.0
-offset_bottom = 285.0
+offset_left = -89.0
+offset_top = -115.0
+offset_right = 92.0
+offset_bottom = 52.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 281.0
-offset_top = 81.0
-offset_right = 476.0
-offset_bottom = 108.0
+offset_left = -97.0
+offset_top = -153.0
+offset_right = 98.0
+offset_bottom = -126.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_tosxc")
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

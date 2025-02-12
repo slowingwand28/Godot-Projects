@@ -20,19 +20,19 @@ input_pickable = true
 script = ExtResource("1_qakxe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(381, 212)
+position = Vector2(3, -21)
 texture = ExtResource("1_repii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(377.75, 233.75)
+position = Vector2(-0.25, 0.75)
 shape = SubResource("RectangleShape2D_hunp0")
 
 [node name="Box" type="Panel" parent="."]
 visible = false
-offset_left = 287.0
-offset_top = 118.0
-offset_right = 468.0
-offset_bottom = 285.0
+offset_left = -91.0
+offset_top = -114.0
+offset_right = 90.0
+offset_bottom = 53.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
 
