@@ -2,6 +2,13 @@ extends Node2D
 
 @onready var unit = preload("res://Faction1/Units/Test unit/unit.tscn")
 var housePos = Vector2()
+@export var unitCost = 10
+
+func _process(delta: float) -> void:
+	if Game.resorces < unitCost:
+		$Yes.disabled = true
+	else:
+		$Yes.disabled = false
 
 func _on_yes_pressed() -> void:
 	var randomPosX = randi_range(-100, 100)
@@ -12,6 +19,7 @@ func _on_yes_pressed() -> void:
 	var newUnit = unit.instantiate()
 	newUnit.position = Vector2((housePos.x + randomPosX), (housePos.y + randomPosY)) #housePos + Vector2(randomPosX, randomPosY)
 	path.add_child(newUnit)
+	Game.resorces -= unitCost
 	worldPath.get_units()
 
 

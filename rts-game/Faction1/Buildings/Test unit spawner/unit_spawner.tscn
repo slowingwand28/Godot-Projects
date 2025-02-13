@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd7a8u71o5lap"]
+[gd_scene load_steps=6 format=3 uid="uid://cd7a8u71o5lap"]
 
 [ext_resource type="Script" path="res://Faction1/Buildings/Test unit spawner/unit_spawner.gd" id="1_qakxe"]
 [ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Buildings/Test unit spawner/Test Building.png" id="1_repii"]
@@ -14,6 +14,9 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8tgr"]
+bg_color = Color(0.93826, 0.804025, 0.102209, 1)
 
 [node name="Unit Spawner" type="StaticBody2D"]
 input_pickable = true
@@ -36,5 +39,17 @@ offset_bottom = 53.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -97.0
+offset_top = -153.0
+offset_right = 98.0
+offset_bottom = -126.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_r8tgr")
+show_percentage = false
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

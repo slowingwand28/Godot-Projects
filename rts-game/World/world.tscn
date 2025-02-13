@@ -33,7 +33,7 @@ y_sort_enabled = true
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="Unit Spawner" parent="Buildings" instance=ExtResource("5_g0qk1")]
-position = Vector2(385, 299)
+position = Vector2(360, 293)
 
 [node name="Resource Building" parent="Buildings" instance=ExtResource("5_86caj")]
 position = Vector2(741, 300)

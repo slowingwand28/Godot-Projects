@@ -2,8 +2,10 @@ extends StaticBody2D
 
 @onready var bar = $ProgressBar
 @onready var timer = $Timer
-var maxTime = 100
+var maxTime = 50
+var amount = 10
 var currTime
+var selected = false
 
 func _ready() -> void:
 	currTime = 0
@@ -20,5 +22,5 @@ func _on_timer_timeout() -> void:
 	tween.tween_property(bar, "value", currTime, 0.5).set_trans(Tween.TRANS_LINEAR)
 
 func resourceCollected():
-	Game.resorces += 10
+	Game.resorces += amount
 	_ready()
