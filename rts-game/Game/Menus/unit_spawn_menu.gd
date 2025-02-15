@@ -22,7 +22,7 @@ func _on_yes_pressed() -> void:
 	#path.add_child(newUnit)
 	#Game.resorces -= unitCost
 	#worldPath.get_units()
-	yes_pressed.emit()
+	emit_signal("yes_pressed")
 
 
 func _on_no_pressed() -> void:
