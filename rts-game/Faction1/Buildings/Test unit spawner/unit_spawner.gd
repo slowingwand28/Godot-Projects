@@ -26,6 +26,7 @@ func spawnUnit():
 	var path = get_tree().get_root().get_node("World/UI")
 	if not path.has_node("Unit Spawn Menu"):
 		var spawnMenu = menu.instantiate()
+		spawnMenu.connect("yes_pressed", )
 		spawnMenu.housePos = position
 		path.add_child(spawnMenu)
 

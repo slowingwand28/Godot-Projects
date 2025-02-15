@@ -43,6 +43,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
 wait_time = 0.1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -97.0
 offset_top = -153.0
 offset_right = 98.0
