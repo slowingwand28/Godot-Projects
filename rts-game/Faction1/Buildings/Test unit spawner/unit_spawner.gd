@@ -6,7 +6,7 @@ var mouseEntered = false
 @onready var timer = $Timer
 var selected = false
 var maxTime = 100
-var currTime
+var currTime = 0 
 
 @onready var menu = preload("res://Game/Menus/unit_spawn_menu.tscn")
 @onready var unit = preload("res://Faction1/Units/Test unit/unit.tscn")
@@ -15,8 +15,8 @@ func _process(delta: float) -> void:
 	select.visible = selected
 	if currTime >= maxTime:
 		timer.stop()
-		bar.visible = false
 		spawnUnit()
+		bar.visible = false
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("LeftClick")) and (mouseEntered == true):
@@ -31,12 +31,11 @@ func _on_mouse_exited() -> void:
 	mouseEntered = false
 
 func openMenu():
-	var path = get_tree().get_root().get_node("World/UI")
-	if not path.has_node("Unit Spawn Menu"):
+	if not self.has_node("Unit Spawn Menu"):
 		var spawnMenu = menu.instantiate()
 		spawnMenu.housePos = position
-		path.add_child(spawnMenu)
-		spawnMenu.yes_pressed.connect(startTimer())
+		self.add_child(spawnMenu)
+
 
 func startTimer():
 	currTime = 0
@@ -49,4 +48,4 @@ func _on_timer_timeout() -> void:
 	tween.tween_property(bar, "value", currTime, 0.5).set_trans(Tween.TRANS_LINEAR)
 
 func spawnUnit():
-	pass
+	print("Spawn Unit")
