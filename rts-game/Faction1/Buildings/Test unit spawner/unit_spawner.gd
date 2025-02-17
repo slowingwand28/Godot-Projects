@@ -31,10 +31,11 @@ func _on_mouse_exited() -> void:
 	mouseEntered = false
 
 func openMenu():
-	if not self.has_node("Unit Spawn Menu"):
+	var path = get_tree().get_root().get_node("World/UI")
+	if not path.has_node("Unit Spawn Menu"):
 		var spawnMenu = menu.instantiate()
 		spawnMenu.housePos = position
-		self.add_child(spawnMenu)
+		path.add_child(spawnMenu)
 
 
 func startTimer():
