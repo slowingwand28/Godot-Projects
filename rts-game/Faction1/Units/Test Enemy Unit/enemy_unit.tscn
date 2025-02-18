@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://0374he4d84em"]
+[gd_scene load_steps=5 format=3 uid="uid://0374he4d84em"]
 
 [ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Test Enemy Unit/enemy-unit-placeholder.png" id="1_eqhu5"]
+[ext_resource type="Script" path="res://Faction1/Units/Test Enemy Unit/enemy_unit.gd" id="1_ul1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
 size = Vector2(42, 68)
@@ -13,9 +14,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
-[node name="Enemy Unit" type="CharacterBody2D" groups=["Friendly Units"]]
+[node name="Enemy Unit" type="CharacterBody2D" groups=["Enemy Units"]]
 y_sort_enabled = true
 input_pickable = true
+script = ExtResource("1_ul1mu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ix7du")
@@ -30,6 +32,3 @@ offset_right = 24.0
 offset_bottom = 37.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
