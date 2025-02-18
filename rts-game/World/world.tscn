@@ -31,6 +31,8 @@ script = ExtResource("1_6jbkn")
 [node name="Friendly Units" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Enemy Units" type="Node2D" parent="."]
+
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="Unit Spawner" parent="Buildings" instance=ExtResource("5_g0qk1")]
