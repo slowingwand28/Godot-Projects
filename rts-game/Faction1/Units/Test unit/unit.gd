@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var speed = 200.0
 var follow_cursor = false
 var mouseEntered = false
+var health = 5
 
 func _ready() -> void:
 	set_selected(selected)
@@ -43,3 +44,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouseEntered = false
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	pass 
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
