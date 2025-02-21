@@ -7,10 +7,19 @@ extends CharacterBody2D
 var follow_cursor = false
 var mouseEntered = false
 var health = 5
+var enemy_in_range = false
+var enemies = []
 
 func _ready() -> void:
 	set_selected(selected)
 	Game.friendly_pop += 1
+
+func _process(delta: float) -> void:
+	if len(enemies) > 0:
+		pass
+	
+	if health <= 0:
+		queue_free()
 
 func set_selected(value):
 	selected = value
@@ -46,7 +55,12 @@ func _on_mouse_exited() -> void:
 	mouseEntered = false
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	pass 
+	if body.is_in_group("Enemy Units"):
+		enemies.append(body)
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("Enemy Units"):
+		enemies.erase(body)
+
+func fighting():
+	pass
