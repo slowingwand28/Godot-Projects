@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 @export var selected = false
 @onready var box = $Box
+@onready var timer = $Timer
 @onready var target = position
 @export var speed = 200.0
 var follow_cursor = false
 var mouseEntered = false
 var health = 5
-var enemy_in_range = false
+var is_attacking = false
 var enemies = []
 
 func _ready() -> void:
@@ -15,8 +16,9 @@ func _ready() -> void:
 	Game.friendly_pop += 1
 
 func _process(delta: float) -> void:
-	if len(enemies) > 0:
-		pass
+	if (len(enemies) > 0) and !is_attacking:
+		is_attacking = true
+		timer.start()
 	
 	if health <= 0:
 		queue_free()
@@ -63,4 +65,8 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 		enemies.erase(body)
 
 func fighting():
-	pass
+	enemies[0].health -= 1
+	is_attacking = false
+
+func _on_timer_timeout() -> void:
+	fighting()
