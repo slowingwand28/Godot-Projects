@@ -3,15 +3,19 @@ extends CharacterBody2D
 @export var selected = false
 @onready var box = $Box
 @onready var timer = $Timer
+@onready var health_bar = $"Health Bar"
 @onready var target = position
 @export var speed = 200.0
 var follow_cursor = false
 var mouseEntered = false
+var max_health = 5
 var health = 5
 var is_attacking = false
 var enemies = []
 
 func _ready() -> void:
+	health_bar.visible = false
+	health_bar.max_value = max_health
 	set_selected(selected)
 	Game.friendly_pop += 1
 
@@ -20,6 +24,9 @@ func _process(delta: float) -> void:
 		is_attacking = true
 		timer.start()
 	
+	health_bar.value = health
+	if health < max_health:
+		health_bar.visible = true
 	if health <= 0:
 		queue_free()
 
@@ -65,7 +72,8 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 		enemies.erase(body)
 
 func fighting():
-	enemies[0].health -= 1
+	if len(enemies) > 0:
+		enemies[0].health -= 1
 	is_attacking = false
 
 func _on_timer_timeout() -> void:

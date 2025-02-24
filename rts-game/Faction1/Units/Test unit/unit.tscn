@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://q8co5f0wnjhm"]
+[gd_scene load_steps=7 format=3 uid="uid://q8co5f0wnjhm"]
 
 [ext_resource type="Script" path="res://Faction1/Units/Test unit/unit.gd" id="1_c62ov"]
 [ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="2_dnymg"]
@@ -16,6 +16,9 @@ border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
 radius = 48.0104
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
+bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Unit" type="CharacterBody2D" groups=["Friendly Units"]]
 y_sort_enabled = true
@@ -45,6 +48,14 @@ shape = SubResource("CircleShape2D_lj4xo")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+offset_left = -43.0
+offset_top = -51.0
+offset_right = 43.0
+offset_bottom = -42.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
+show_percentage = false
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -37,6 +37,24 @@ y_sort_enabled = true
 [node name="Enemy Unit" parent="Enemy Units" instance=ExtResource("4_ql0is")]
 position = Vector2(528, 514)
 
+[node name="Enemy Unit2" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(528, 441)
+
+[node name="Enemy Unit3" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(581, 513)
+
+[node name="Enemy Unit5" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(471, 513)
+
+[node name="Enemy Unit6" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(924, 525)
+
+[node name="Enemy Unit7" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(976, 459)
+
+[node name="Enemy Unit4" parent="Enemy Units" instance=ExtResource("4_ql0is")]
+position = Vector2(873, 456)
+
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="Unit Spawner" parent="Buildings" instance=ExtResource("5_g0qk1")]

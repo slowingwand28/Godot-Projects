@@ -6,6 +6,7 @@ func _ready() -> void:
 	get_units()
 
 func get_units():
+	friendly_units = []
 	friendly_units = get_tree().get_nodes_in_group("Friendly Units")
 
 func _on_camera_area_selected(start, end) -> void:

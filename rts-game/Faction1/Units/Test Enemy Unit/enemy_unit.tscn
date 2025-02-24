@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0374he4d84em"]
+[gd_scene load_steps=7 format=3 uid="uid://0374he4d84em"]
 
 [ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Test Enemy Unit/enemy-unit-placeholder.png" id="1_eqhu5"]
 [ext_resource type="Script" path="res://Faction1/Units/Test Enemy Unit/enemy_unit.gd" id="1_ul1mu"]
@@ -16,6 +16,9 @@ border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir6d7"]
 radius = 48.0104
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f18qq"]
+bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Enemy Unit" type="CharacterBody2D" groups=["Enemy Units"]]
 y_sort_enabled = true
@@ -41,3 +44,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_ir6d7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+offset_left = -43.0
+offset_top = -51.0
+offset_right = 43.0
+offset_bottom = -42.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_f18qq")
+show_percentage = false
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
