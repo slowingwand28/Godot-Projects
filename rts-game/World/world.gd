@@ -19,6 +19,7 @@ func _on_camera_area_selected(start, end) -> void:
 
 func get_units_in_area(area):
 	var units = []
+	get_units()
 	for unit in friendly_units:
 		if (unit.position.x > area[0].x) and (unit.position.x < area[1].x) and (unit.position.y > area[0].y) and (unit.position.y < area[1].y):
 			units.append(unit)
