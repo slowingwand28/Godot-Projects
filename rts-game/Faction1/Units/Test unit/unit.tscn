@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="2_dnymg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
-size = Vector2(162, 94)
+size = Vector2(44, 70)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -26,7 +26,6 @@ input_pickable = true
 script = ExtResource("1_c62ov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ix7du")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
