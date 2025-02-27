@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://q8co5f0wnjhm"]
+[gd_scene load_steps=7 format=3 uid="uid://tq6ob01y788y"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Test unit/friendly_unit.gd" id="1_c62ov"]
-[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="2_dnymg"]
+[ext_resource type="Script" path="res://Faction1/Units/Test unit/friendly_unit.gd" id="1_thqkk"]
+[ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="2_n1uxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
 size = Vector2(162, 94)
@@ -14,46 +14,51 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
-radius = 48.0104
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij437"]
+radius = 58.0
+height = 220.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
-[node name="Unit" type="CharacterBody2D" groups=["Friendly Units"]]
+[node name="Heavy Unit" type="CharacterBody2D" groups=["Friendly Units"]]
 y_sort_enabled = true
 input_pickable = true
-script = ExtResource("1_c62ov")
+script = ExtResource("1_thqkk")
+pop_count = 3
+speed = 150.0
+max_health = 12
+attack_damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ix7du")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_dnymg")
+texture = ExtResource("2_n1uxv")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -24.0
-offset_top = -37.0
-offset_right = 24.0
-offset_bottom = 37.0
+offset_left = -86.0
+offset_top = -51.0
+offset_right = 86.0
+offset_bottom = 51.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_lj4xo")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ij437")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
-offset_left = -43.0
-offset_top = -51.0
-offset_right = 43.0
-offset_bottom = -42.0
+offset_left = -64.0
+offset_top = -63.0
+offset_right = 65.0
+offset_bottom = -54.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
 show_percentage = false
 

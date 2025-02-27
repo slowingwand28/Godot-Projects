@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgjy4omqa1kbi"]
+[gd_scene load_steps=8 format=3 uid="uid://bgjy4omqa1kbi"]
 
 [ext_resource type="Script" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_44d2v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0374he4d84em" path="res://Faction1/Units/Test Enemy Unit/enemy_unit.tscn" id="4_ql0is"]
 [ext_resource type="PackedScene" uid="uid://cc0cygiwodjxs" path="res://Faction1/Buildings/Test Resource Building/resource_building.tscn" id="5_86caj"]
 [ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Buildings/Test unit spawner/unit_spawner.tscn" id="5_g0qk1"]
+[ext_resource type="PackedScene" uid="uid://tq6ob01y788y" path="res://Faction1/Units/Friendly/Heavy/heavy_unit.tscn" id="7_auoys"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -62,5 +63,8 @@ position = Vector2(360, 293)
 
 [node name="Resource Building" parent="Buildings" instance=ExtResource("5_86caj")]
 position = Vector2(741, 300)
+
+[node name="Heavy Unit" parent="." instance=ExtResource("7_auoys")]
+position = Vector2(545, 129)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]

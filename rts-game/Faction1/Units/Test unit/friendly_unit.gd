@@ -11,13 +11,14 @@ var follow_cursor = false
 var mouseEntered = false
 @export var max_health = 4
 @export var attack_damage = 1
-var health = max_health
+var health
 var is_attacking = false
 var enemies = []
 
 func _ready() -> void:
 	health_bar.visible = false
 	health_bar.max_value = max_health
+	health = max_health
 	set_selected(selected)
 	Game.friendly_pop += pop_count
 

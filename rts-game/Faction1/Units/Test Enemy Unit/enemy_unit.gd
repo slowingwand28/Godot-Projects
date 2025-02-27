@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 @onready var timer = $Timer
 @onready var health_bar = $"Health Bar"
-var max_health = 5
-var health = 5
+@export var max_health = 4
+var health
 var is_attacking = false
 var enemies = []
 
 func _ready() -> void:
 	health_bar.visible = false
 	health_bar.max_value = max_health
+	health = max_health
 
 func _process(delta: float) -> void:
 	if (len(enemies) > 0) and !is_attacking:
