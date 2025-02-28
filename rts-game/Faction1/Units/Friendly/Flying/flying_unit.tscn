@@ -23,7 +23,8 @@ border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [node name="Flying Unit" type="CharacterBody2D" groups=["Friendly Units"]]
 y_sort_enabled = true
-collision_mask = 2
+collision_layer = 2
+collision_mask = 3
 input_pickable = true
 script = ExtResource("1_poqv3")
 pop_count = 2
