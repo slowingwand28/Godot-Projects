@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
-var selected = false
 @onready var box = $Box
 @onready var timer = $Timer
 @onready var health_bar = $"Health Bar"
 @onready var target = position
 @export var pop_count = 1
 @export var speed = 200.0
-var follow_cursor = false
-var mouseEntered = false
 @export var max_health = 4
 @export var attack_damage = 1
+@export var flying = false
+var follow_cursor = false
+var mouseEntered = false
+var selected = false
 var health
 var is_attacking = false
 var enemies = []

@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://tq6ob01y788y"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Test unit/friendly_unit.gd" id="1_thqkk"]
+[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_thqkk"]
 [ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="2_n1uxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
+resource_local_to_scene = true
 size = Vector2(162, 94)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
@@ -28,7 +29,7 @@ script = ExtResource("1_thqkk")
 pop_count = 3
 speed = 150.0
 max_health = 12
-attack_damage = 2
+attack_damage = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ix7du")
@@ -38,7 +39,7 @@ texture = ExtResource("2_n1uxv")
 
 [node name="Box" type="Panel" parent="."]
 offset_left = -86.0
-offset_top = -51.0
+offset_top = -52.0
 offset_right = 86.0
 offset_bottom = 51.0
 mouse_filter = 1

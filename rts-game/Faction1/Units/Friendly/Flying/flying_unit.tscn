@@ -1,12 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://q8co5f0wnjhm"]
+[gd_scene load_steps=7 format=3 uid="uid://c3n31rljl01eg"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Test unit/friendly_unit.gd" id="1_c62ov"]
-[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="2_dnymg"]
+[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_poqv3"]
+[ext_resource type="Texture2D" uid="uid://b2tb172i4kkp1" path="res://Faction1/Units/Friendly/Flying/flying_unit-placeholder.png" id="2_mux1k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
-size = Vector2(44, 70)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhtco"]
+resource_local_to_scene = true
+radius = 38.0132
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
+radius = 49.0918
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
+bg_color = Color(0.173542, 0.643465, 0.886506, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddkc5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
 border_width_top = 5
@@ -14,30 +21,21 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
-radius = 48.0104
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
-bg_color = Color(0.173542, 0.643465, 0.886506, 1)
-
-[node name="Unit" type="CharacterBody2D" groups=["Friendly Units"]]
+[node name="Flying Unit" type="CharacterBody2D" groups=["Friendly Units"]]
 y_sort_enabled = true
+collision_mask = 2
 input_pickable = true
-script = ExtResource("1_c62ov")
+script = ExtResource("1_poqv3")
+pop_count = 2
+speed = 250.0
+max_health = 6
+attack_damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ix7du")
+shape = SubResource("CircleShape2D_uhtco")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_dnymg")
-
-[node name="Box" type="Panel" parent="."]
-offset_left = -24.0
-offset_top = -37.0
-offset_right = 24.0
-offset_bottom = 37.0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
+texture = ExtResource("2_mux1k")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
@@ -55,6 +53,17 @@ offset_right = 43.0
 offset_bottom = -42.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
 show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Box" type="Panel" parent="."]
+z_index = 1
+z_as_relative = false
+offset_left = -46.0
+offset_top = -42.0
+offset_right = 48.0
+offset_bottom = 22.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ddkc5")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

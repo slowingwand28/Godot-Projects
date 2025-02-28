@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6d6o4b8mi8v5"]
 
 [ext_resource type="Script" path="res://Game/Menus/unit_spawn_menu.gd" id="1_rafii"]
-[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Test unit/unit-placeholder.png" id="2_ulvqr"]
+[ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Friendly/Standard/unit-placeholder.png" id="2_ulvqr"]
 
 [node name="Unit Spawn Menu" type="Node2D"]
 z_index = 1

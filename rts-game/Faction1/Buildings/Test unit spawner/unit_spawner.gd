@@ -11,7 +11,7 @@ var que = 0
 var spawning = false
 
 @onready var menu = preload("res://Game/Menus/unit_spawn_menu.tscn")
-@onready var unit = preload("res://Faction1/Units/Test unit/unit.tscn")
+@onready var unit = preload("res://Faction1/Units/Friendly/Standard/unit.tscn")
 
 func _process(delta: float) -> void:
 	select.visible = selected
