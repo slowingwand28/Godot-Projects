@@ -23,6 +23,8 @@ bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Enemy Unit" type="CharacterBody2D" groups=["Enemy Units"]]
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 7
 input_pickable = true
 script = ExtResource("1_ul1mu")
 
@@ -42,6 +44,8 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_ir6d7")

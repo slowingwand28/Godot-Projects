@@ -22,9 +22,10 @@ border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [node name="Flying Unit" type="CharacterBody2D" groups=["Friendly Units"]]
-y_sort_enabled = true
-collision_layer = 2
-collision_mask = 3
+z_index = 1
+z_as_relative = false
+collision_layer = 8
+collision_mask = 24
 input_pickable = true
 script = ExtResource("1_poqv3")
 pop_count = 2
@@ -39,6 +40,8 @@ shape = SubResource("CircleShape2D_uhtco")
 texture = ExtResource("2_mux1k")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_lj4xo")
