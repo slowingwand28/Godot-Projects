@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Enemy/Standard/enemy-unit-placeholder.png" id="1_eqhu5"]
 [ext_resource type="Script" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_ul1mu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdg7f"]
 resource_local_to_scene = true
-size = Vector2(42, 68)
+size = Vector2(43, 68)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir6d7"]
 radius = 48.0104
@@ -21,7 +21,8 @@ input_pickable = true
 script = ExtResource("1_ul1mu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ix7du")
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_hdg7f")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_eqhu5")

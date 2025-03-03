@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0dumxhyi84k8"]
+
+[ext_resource type="Script" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_brjdr"]
+[ext_resource type="Texture2D" uid="uid://crujl8kcyxfie" path="res://Faction1/Units/Enemy/Heavy/enemy_heavy_unit-placeholder.png" id="2_qwy1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbqm1"]
+resource_local_to_scene = true
+size = Vector2(162, 94)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc84x"]
+radius = 58.0
+height = 220.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnhty"]
+bg_color = Color(0.173542, 0.643465, 0.886506, 1)
+
+[node name="Enemy Heavy Unit" type="CharacterBody2D" groups=["Enemy Units"]]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 7
+input_pickable = true
+script = ExtResource("1_brjdr")
+speed = 150
+max_health = 12
+attack_damage = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cbqm1")
+
+[node name="Placeholder Sprite" type="Sprite2D" parent="."]
+position = Vector2(-0.25, 0.25)
+scale = Vector2(1.00311, 1.00538)
+texture = ExtResource("2_qwy1e")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bc84x")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -66.0
+offset_right = 64.0
+offset_bottom = -57.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_dnhty")
+show_percentage = false
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

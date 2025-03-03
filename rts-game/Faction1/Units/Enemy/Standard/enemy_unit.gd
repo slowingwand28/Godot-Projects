@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var timer = $Timer
 @onready var health_bar = $"Health Bar"
-@export var attack_damage = 1
-@export var max_health = 4
 @export var speed = 200
+@export var max_health = 4
+@export var attack_damage = 1
 var health
 var is_attacking = false
 var enemies = []
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 func fighting():
 	if len(enemies) > 0:
-		enemies[0].health -= 1
+		enemies[0].health -= attack_damage
 	is_attacking = false
 
 func _on_timer_timeout() -> void:
