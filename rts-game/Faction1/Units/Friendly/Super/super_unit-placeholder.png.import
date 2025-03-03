@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdtfpr2cumqpo"
-path="res://.godot/imported/enemy-unit-placeholder.png-c18eb0a5a0bc47ec708d017c4f0d00aa.ctex"
+uid="uid://dp3idvq3a12kb"
+path="res://.godot/imported/super_unit-placeholder.png-0d1b2cd243ae2fdf00a10d193d31f3f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Units/Test Enemy Unit/enemy-unit-placeholder.png"
-dest_files=["res://.godot/imported/enemy-unit-placeholder.png-c18eb0a5a0bc47ec708d017c4f0d00aa.ctex"]
+source_file="res://Faction1/Units/Friendly/Super/super_unit-placeholder.png"
+dest_files=["res://.godot/imported/super_unit-placeholder.png-0d1b2cd243ae2fdf00a10d193d31f3f4.ctex"]
 
 [params]
 

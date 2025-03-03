@@ -1,19 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://0374he4d84em"]
+[gd_scene load_steps=6 format=3 uid="uid://0374he4d84em"]
 
-[ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Test Enemy Unit/enemy-unit-placeholder.png" id="1_eqhu5"]
-[ext_resource type="Script" path="res://Faction1/Units/Test Enemy Unit/enemy_unit.gd" id="1_ul1mu"]
+[ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Enemy/Standard/enemy-unit-placeholder.png" id="1_eqhu5"]
+[ext_resource type="Script" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_ul1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
 resource_local_to_scene = true
 size = Vector2(42, 68)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir6d7"]
 radius = 48.0104
@@ -33,15 +25,6 @@ shape = SubResource("RectangleShape2D_ix7du")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_eqhu5")
-
-[node name="Box" type="Panel" parent="."]
-visible = false
-offset_left = -24.0
-offset_top = -37.0
-offset_right = 24.0
-offset_bottom = 37.0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2

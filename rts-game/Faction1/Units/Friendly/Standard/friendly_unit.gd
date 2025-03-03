@@ -8,7 +8,6 @@ extends CharacterBody2D
 @export var speed = 200.0
 @export var max_health = 4
 @export var attack_damage = 1
-@export var flying = false
 var follow_cursor = false
 var mouseEntered = false
 var selected = false

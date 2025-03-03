@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 @onready var timer = $Timer
 @onready var health_bar = $"Health Bar"
+@export var attack_damage = 1
 @export var max_health = 4
+@export var speed = 200
 var health
 var is_attacking = false
 var enemies = []

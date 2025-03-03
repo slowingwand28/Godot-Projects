@@ -52,9 +52,9 @@ one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
 offset_left = -43.0
-offset_top = -51.0
+offset_top = -56.0
 offset_right = 43.0
-offset_bottom = -42.0
+offset_bottom = -47.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
 show_percentage = false
 metadata/_edit_use_anchors_ = true

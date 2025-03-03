@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
 resource_local_to_scene = true
-size = Vector2(44, 70)
+size = Vector2(43, 68)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
 resource_local_to_scene = true
@@ -29,6 +29,7 @@ input_pickable = true
 script = ExtResource("1_c62ov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_ix7du")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]

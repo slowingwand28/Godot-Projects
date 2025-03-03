@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://tq6ob01y788y"]
+[gd_scene load_steps=7 format=3 uid="uid://6vpsc23tpg1"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_thqkk"]
-[ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="2_n1uxv"]
+[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_gmjyq"]
+[ext_resource type="Texture2D" uid="uid://dp3idvq3a12kb" path="res://Faction1/Units/Friendly/Super/super_unit-placeholder.png" id="2_d8o2c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsffk"]
 resource_local_to_scene = true
-size = Vector2(162, 94)
+size = Vector2(206, 153)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssif4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
 border_width_top = 5
@@ -15,54 +15,53 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij437"]
-radius = 58.0
-height = 220.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_sipw1"]
+radius = 133.821
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enuma"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
-[node name="Heavy Unit" type="CharacterBody2D" groups=["Friendly Units"]]
+[node name="Super Unit" type="CharacterBody2D" groups=["Friendly Units"]]
 y_sort_enabled = true
 collision_mask = 7
 input_pickable = true
-script = ExtResource("1_thqkk")
-pop_count = 3
-speed = 150.0
-max_health = 12
-attack_damage = 4
+script = ExtResource("1_gmjyq")
+pop_count = 8
+speed = 100.0
+max_health = 16
+attack_damage = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ix7du")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bsffk")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_n1uxv")
+texture = ExtResource("2_d8o2c")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -86.0
-offset_top = -52.0
-offset_right = 86.0
-offset_bottom = 51.0
+offset_left = -108.0
+offset_top = -81.0
+offset_right = 107.0
+offset_bottom = 80.0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ssif4")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ij437")
+shape = SubResource("CircleShape2D_sipw1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
-offset_left = -64.0
-offset_top = -66.0
-offset_right = 64.0
-offset_bottom = -57.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
+offset_left = -97.0
+offset_top = -98.0
+offset_right = 97.0
+offset_bottom = -89.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_enuma")
 show_percentage = false
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
