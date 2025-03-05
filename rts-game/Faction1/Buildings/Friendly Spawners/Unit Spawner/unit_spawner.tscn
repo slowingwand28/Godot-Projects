@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd7a8u71o5lap"]
 
-[ext_resource type="Script" path="res://Faction1/Buildings/Test unit spawner/unit_spawner.gd" id="1_qakxe"]
-[ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Buildings/Test unit spawner/Test Building.png" id="1_repii"]
+[ext_resource type="Script" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.gd" id="1_3l25q"]
+[ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/Test Building.png" id="1_repii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
 size = Vector2(110.5, 101.5)
@@ -22,7 +22,7 @@ bg_color = Color(0.93826, 0.804025, 0.102209, 1)
 collision_layer = 4
 collision_mask = 0
 input_pickable = true
-script = ExtResource("1_qakxe")
+script = ExtResource("1_3l25q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -21)

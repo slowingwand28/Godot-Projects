@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://6vpsc23tpg1"]
 
 [ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_gmjyq"]
-[ext_resource type="Texture2D" uid="uid://dp3idvq3a12kb" path="res://Faction1/Units/Friendly/Super/super_unit-placeholder.png" id="2_d8o2c"]
+[ext_resource type="Texture2D" uid="uid://5rpy34q5tbv3" path="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png" id="2_sbrb0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsffk"]
-resource_local_to_scene = true
-size = Vector2(206, 153)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umm48"]
+radius = 153.145
+height = 509.587
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssif4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,7 +16,7 @@ border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sipw1"]
-radius = 133.821
+radius = 262.017
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enuma"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
@@ -32,17 +32,18 @@ max_health = 16
 attack_damage = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_bsffk")
+position = Vector2(-11, 10)
+rotation = 1.0472
+shape = SubResource("CapsuleShape2D_umm48")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_d8o2c")
+texture = ExtResource("2_sbrb0")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -108.0
-offset_top = -81.0
-offset_right = 107.0
-offset_bottom = 80.0
+offset_left = -253.0
+offset_top = -164.0
+offset_right = 235.0
+offset_bottom = 205.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssif4")
 
@@ -50,7 +51,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ssif4")
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-13, 6)
 shape = SubResource("CircleShape2D_sipw1")
+debug_color = Color(0.806127, 0.398526, 0.322587, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

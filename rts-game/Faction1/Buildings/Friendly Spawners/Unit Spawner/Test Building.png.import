@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qq1gn6ax56m0"
-path="res://.godot/imported/Test Building.png-6bddf45d2e474dc363f5e755f70d7f7b.ctex"
+path="res://.godot/imported/Test Building.png-0f7e2c3c9a4d40f8ef97d9db2212cc94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Buildings/Test unit spawner/Test Building.png"
-dest_files=["res://.godot/imported/Test Building.png-6bddf45d2e474dc363f5e755f70d7f7b.ctex"]
+source_file="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/Test Building.png"
+dest_files=["res://.godot/imported/Test Building.png-0f7e2c3c9a4d40f8ef97d9db2212cc94.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc0cygiwodjxs"]
 
-[ext_resource type="Texture2D" uid="uid://enxg7opwawu8" path="res://Faction1/Buildings/Test Resource Building/Test Resource Building.png" id="1_24wv6"]
-[ext_resource type="Script" path="res://Faction1/Buildings/Test Resource Building/resource_building.gd" id="1_nswjq"]
+[ext_resource type="Texture2D" uid="uid://enxg7opwawu8" path="res://Faction1/Buildings/Resource Building/Test Resource Building.png" id="1_24wv6"]
+[ext_resource type="Script" path="res://Faction1/Buildings/Resource Building/resource_building.gd" id="1_yj2tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
 size = Vector2(110.5, 101.5)
@@ -22,7 +22,7 @@ bg_color = Color(0.154627, 0.68611, 0.646531, 1)
 collision_layer = 4
 collision_mask = 0
 input_pickable = true
-script = ExtResource("1_nswjq")
+script = ExtResource("1_yj2tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -22)

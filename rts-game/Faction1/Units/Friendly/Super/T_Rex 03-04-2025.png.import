@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://enxg7opwawu8"
-path="res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"
+uid="uid://5rpy34q5tbv3"
+path="res://.godot/imported/T_Rex 03-04-2025.png-99bae8bb589c37edd1b0f773359bdf6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Buildings/Resource Building/Test Resource Building.png"
-dest_files=["res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"]
+source_file="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png"
+dest_files=["res://.godot/imported/T_Rex 03-04-2025.png-99bae8bb589c37edd1b0f773359bdf6d.ctex"]
 
 [params]
 

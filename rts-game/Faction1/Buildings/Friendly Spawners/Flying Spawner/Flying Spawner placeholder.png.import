@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://enxg7opwawu8"
-path="res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"
+uid="uid://ck6md4scsvusc"
+path="res://.godot/imported/Flying Spawner placeholder.png-e9f79e7d9a6e21f8e9796fde78b281ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Buildings/Resource Building/Test Resource Building.png"
-dest_files=["res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"]
+source_file="res://Faction1/Buildings/Friendly Spawners/Flying Spawner/Flying Spawner placeholder.png"
+dest_files=["res://.godot/imported/Flying Spawner placeholder.png-e9f79e7d9a6e21f8e9796fde78b281ea.ctex"]
 
 [params]
 

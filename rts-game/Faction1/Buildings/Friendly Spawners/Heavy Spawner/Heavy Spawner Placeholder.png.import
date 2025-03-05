@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://enxg7opwawu8"
-path="res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"
+uid="uid://dnrwvg1h735w4"
+path="res://.godot/imported/Heavy Spawner Placeholder.png-bc162ae611e9b935bdaa469a3e3cb0e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Buildings/Resource Building/Test Resource Building.png"
-dest_files=["res://.godot/imported/Test Resource Building.png-31b43a2c4c234d5238a853e2b427a314.ctex"]
+source_file="res://Faction1/Buildings/Friendly Spawners/Heavy Spawner/Heavy Spawner Placeholder.png"
+dest_files=["res://.godot/imported/Heavy Spawner Placeholder.png-bc162ae611e9b935bdaa469a3e3cb0e4.ctex"]
 
 [params]
 
