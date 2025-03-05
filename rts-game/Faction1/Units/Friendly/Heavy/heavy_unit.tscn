@@ -26,6 +26,7 @@ bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 y_sort_enabled = true
 collision_mask = 7
 input_pickable = true
+platform_floor_layers = 4294901760
 script = ExtResource("1_thqkk")
 pop_count = 3
 speed = 150.0
