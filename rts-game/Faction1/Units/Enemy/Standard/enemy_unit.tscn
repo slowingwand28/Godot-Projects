@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://0374he4d84em"]
 
 [ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Enemy/Standard/enemy-unit-placeholder.png" id="1_eqhu5"]
-[ext_resource type="Script" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_ul1mu"]
+[ext_resource type="Script" uid="uid://24ovgm7bb7u4" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_ul1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdg7f"]
 resource_local_to_scene = true

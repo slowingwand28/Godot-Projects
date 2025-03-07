@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bgjy4omqa1kbi"]
 
-[ext_resource type="Script" path="res://World/camera.gd" id="1_6jbkn"]
-[ext_resource type="Script" path="res://World/world.gd" id="1_44d2v"]
+[ext_resource type="Script" uid="uid://d0mf7rbks77rc" path="res://World/camera.gd" id="1_6jbkn"]
+[ext_resource type="Script" uid="uid://bgww2rmudxun" path="res://World/world.gd" id="1_44d2v"]
 [ext_resource type="PackedScene" uid="uid://b2nkq8fra0k8y" path="res://Game/UI/ui.tscn" id="1_yla30"]
 [ext_resource type="PackedScene" uid="uid://df4np5ws26app" path="res://Faction1/Units/Enemy/Super/enemy_super_unit.tscn" id="2_m085u"]
 [ext_resource type="PackedScene" uid="uid://0374he4d84em" path="res://Faction1/Units/Enemy/Standard/enemy_unit.tscn" id="4_ql0is"]

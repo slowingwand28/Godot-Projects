@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://y7y0lccrblpf"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_wk4up"]
+[ext_resource type="Script" uid="uid://24ovgm7bb7u4" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_wk4up"]
 [ext_resource type="Texture2D" uid="uid://qktpovp4tc5f" path="res://Faction1/Units/Enemy/Flying/enemy_flying_unit-placeholder.png" id="2_58og4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o77ab"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://6vpsc23tpg1"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_gmjyq"]
+[ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_gmjyq"]
 [ext_resource type="Texture2D" uid="uid://5rpy34q5tbv3" path="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png" id="2_sbrb0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umm48"]

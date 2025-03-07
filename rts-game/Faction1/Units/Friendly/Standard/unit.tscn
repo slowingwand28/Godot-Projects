@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://q8co5f0wnjhm"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_c62ov"]
+[ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_c62ov"]
 [ext_resource type="Texture2D" uid="uid://dalybkigwdeb4" path="res://Faction1/Units/Friendly/Standard/unit-placeholder.png" id="2_dnymg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]

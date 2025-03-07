@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd7a8u71o5lap"]
 
-[ext_resource type="Script" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.gd" id="1_3l25q"]
+[ext_resource type="Script" uid="uid://ij0cfhy3kue6" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.gd" id="1_3l25q"]
 [ext_resource type="Texture2D" uid="uid://qq1gn6ax56m0" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/Test Building.png" id="1_repii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]

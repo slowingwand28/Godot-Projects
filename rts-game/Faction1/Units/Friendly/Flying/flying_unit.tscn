@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3n31rljl01eg"]
 
-[ext_resource type="Script" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_poqv3"]
+[ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_poqv3"]
 [ext_resource type="Texture2D" uid="uid://b2tb172i4kkp1" path="res://Faction1/Units/Friendly/Flying/flying_unit-placeholder.png" id="2_mux1k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhtco"]
