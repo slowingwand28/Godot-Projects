@@ -1,7 +1,25 @@
 extends Node2D
 
-@export var unitCost = 10
+@onready var costLabel = $Label2
+var unitCost = 0
 signal spawn
+var unitName = ""
+@onready var spriteStandard = $"Placeholder Sprite"
+@onready var spriteHeavy = $"Heavy Placeholder Sprite"
+@onready var spriteFlying = $"Flying Placeholder Sprite"
+@onready var spriteSuper = $"Super Placehoder Sprite"
+
+func _ready() -> void:
+	costLabel.text = "Costs " + str(unitCost) + " Resources"
+	
+	if unitName == "Standard":
+		spriteStandard.visible = true
+	elif unitName == "Heavy":
+		spriteHeavy.visible = true
+	elif unitName == "Flying":
+		spriteFlying.visible = true
+	elif unitName == "Super":
+		spriteSuper.visible = true
 
 func _process(delta: float) -> void:
 	if Game.resorces < unitCost:

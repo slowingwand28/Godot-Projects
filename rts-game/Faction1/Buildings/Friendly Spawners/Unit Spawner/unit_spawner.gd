@@ -11,7 +11,10 @@ var que = 0
 var spawning = false
 
 @onready var menu = preload("res://Game/Menus/unit_spawn_menu.tscn")
-@export var unit = preload("res://Faction1/Units/Friendly/Standard/unit.tscn")
+#Unit name must be "Standard", "Heavy", "Flying", or "Super".
+@export var unitName = "Standard"
+@export var unitScene = preload("res://Faction1/Units/Friendly/Standard/unit.tscn")
+@export var unitCost = 10
 
 func _process(delta: float) -> void:
 	select.visible = selected
@@ -41,6 +44,8 @@ func openMenu():
 	if not path.has_node("Unit Spawn Menu"):
 		var spawnMenu = menu.instantiate()
 		spawnMenu.connect("spawn", signal_recieved)
+		spawnMenu.unitCost = unitCost
+		spawnMenu.unitName = unitName
 		path.add_child(spawnMenu)
 
 func signal_recieved():
@@ -65,7 +70,7 @@ func spawnUnit():
 	
 	var path = get_tree().get_root().get_node("World/Friendly Units")
 	var worldPath = get_tree().get_root().get_node("World")
-	var newUnit = unit.instantiate()
+	var newUnit = unitScene.instantiate()
 	newUnit.position = Vector2((position.x + randomPosX), (position.y + randomPosY)) #housePos + Vector2(randomPosX, randomPosY)
 	path.add_child(newUnit)
 	worldPath.get_units()
