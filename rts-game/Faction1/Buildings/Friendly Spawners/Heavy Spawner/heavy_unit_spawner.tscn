@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx4ik4i18ymn5"]
+
+[ext_resource type="Script" uid="uid://ij0cfhy3kue6" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.gd" id="1_ffisv"]
+[ext_resource type="PackedScene" uid="uid://tq6ob01y788y" path="res://Faction1/Units/Friendly/Heavy/heavy_unit.tscn" id="2_8f46s"]
+[ext_resource type="Texture2D" uid="uid://dnrwvg1h735w4" path="res://Faction1/Buildings/Friendly Spawners/Heavy Spawner/Heavy Spawner Placeholder.png" id="2_aaxuy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hunp0"]
+size = Vector2(110.5, 101.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iig5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.180392, 0.239216, 0.878431, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8tgr"]
+bg_color = Color(0.93826, 0.804025, 0.102209, 1)
+
+[node name="Heavy Unit Spawner" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_ffisv")
+maxTime = 150
+unitName = "Heavy"
+unitScene = ExtResource("2_8f46s")
+unitCost = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -21)
+texture = ExtResource("2_aaxuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0.75)
+shape = SubResource("RectangleShape2D_hunp0")
+
+[node name="Box" type="Panel" parent="."]
+visible = false
+offset_left = -91.0
+offset_top = -114.0
+offset_right = 90.0
+offset_bottom = 53.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iig5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -97.0
+offset_top = -153.0
+offset_right = 98.0
+offset_bottom = -126.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_r8tgr")
+show_percentage = false
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

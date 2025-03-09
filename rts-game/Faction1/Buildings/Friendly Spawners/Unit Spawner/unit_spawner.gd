@@ -16,6 +16,9 @@ var spawning = false
 @export var unitScene = preload("res://Faction1/Units/Friendly/Standard/unit.tscn")
 @export var unitCost = 10
 
+func _ready() -> void:
+	bar.max_value = maxTime
+
 func _process(delta: float) -> void:
 	select.visible = selected
 	

@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://0374he4d84em" path="res://Faction1/Units/Enemy/Standard/enemy_unit.tscn" id="4_ql0is"]
 [ext_resource type="PackedScene" uid="uid://cc0cygiwodjxs" path="res://Faction1/Buildings/Resource Building/resource_building.tscn" id="5_86caj"]
 [ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.tscn" id="5_g0qk1"]
-[ext_resource type="PackedScene" uid="uid://tq6ob01y788y" path="res://Faction1/Units/Friendly/Heavy/heavy_unit.tscn" id="7_auoys"]
-[ext_resource type="PackedScene" uid="uid://c3n31rljl01eg" path="res://Faction1/Units/Friendly/Flying/flying_unit.tscn" id="8_qm1ns"]
-[ext_resource type="PackedScene" uid="uid://6vpsc23tpg1" path="res://Faction1/Units/Friendly/Super/super_unit.tscn" id="9_u7qdg"]
 [ext_resource type="PackedScene" uid="uid://d0dumxhyi84k8" path="res://Faction1/Units/Enemy/Heavy/enemy_heavy_unit.tscn" id="10_hkm8k"]
+[ext_resource type="PackedScene" uid="uid://cx4ik4i18ymn5" path="res://Faction1/Buildings/Friendly Spawners/Heavy Spawner/heavy_unit_spawner.tscn" id="10_w47uh"]
 [ext_resource type="PackedScene" uid="uid://y7y0lccrblpf" path="res://Faction1/Units/Enemy/Flying/enemy_flying_unit.tscn" id="11_kpsmb"]
+[ext_resource type="PackedScene" uid="uid://ll1usotxm11e" path="res://Faction1/Buildings/Friendly Spawners/Flying Spawner/flying_unit_spawner.tscn" id="11_lo5ox"]
+[ext_resource type="PackedScene" uid="uid://d1yh62f6cspre" path="res://Faction1/Buildings/Friendly Spawners/Super Spawner/super_unit_spawner.tscn" id="12_h2aik"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -37,15 +37,6 @@ script = ExtResource("1_6jbkn")
 
 [node name="Friendly Units" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Heavy Unit" parent="Friendly Units" instance=ExtResource("7_auoys")]
-position = Vector2(545, 129)
-
-[node name="Flying Unit" parent="Friendly Units" instance=ExtResource("8_qm1ns")]
-position = Vector2(147, 195)
-
-[node name="Super Unit" parent="Friendly Units" instance=ExtResource("9_u7qdg")]
-position = Vector2(982, 149)
 
 [node name="Enemy Units" type="Node2D" parent="."]
 
@@ -87,5 +78,14 @@ position = Vector2(686, 355)
 
 [node name="Unit Spawner" parent="Buildings" instance=ExtResource("5_g0qk1")]
 position = Vector2(352, 348)
+
+[node name="Heavy Unit Spawner" parent="Buildings" instance=ExtResource("10_w47uh")]
+position = Vector2(116, 80)
+
+[node name="Flying Unit Spawner" parent="Buildings" instance=ExtResource("11_lo5ox")]
+position = Vector2(489, 77)
+
+[node name="Super Unit Spawner" parent="Buildings" instance=ExtResource("12_h2aik")]
+position = Vector2(901, 76)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]
