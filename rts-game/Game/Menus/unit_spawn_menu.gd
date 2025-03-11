@@ -32,8 +32,8 @@ func _on_yes_pressed() -> void:
 	Game.resorces -= unitCost
 
 func _on_no_pressed() -> void:
-	var buildings = get_tree().get_root().get_node("World/Buildings")
-	for i in buildings.get_child_count():
-		if buildings.get_child(i).selected == true:
-			buildings.get_child(i).selected = false
+	var base = get_tree().get_root().get_node("World/Faction 1 Base")
+	for i in base.get_child_count():
+		if ("selected" in base.get_child(i)) and (base.get_child(i).selected == true):
+			base.get_child(i).selected = false
 	queue_free()

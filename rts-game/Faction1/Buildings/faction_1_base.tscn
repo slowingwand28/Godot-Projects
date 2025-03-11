@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dde1imoemdeyj"]
+
+[ext_resource type="PackedScene" uid="uid://cc0cygiwodjxs" path="res://Faction1/Buildings/Resource Building/resource_building.tscn" id="1_thssm"]
+[ext_resource type="PackedScene" uid="uid://ll1usotxm11e" path="res://Faction1/Buildings/Friendly Spawners/Flying Spawner/flying_unit_spawner.tscn" id="2_p436r"]
+[ext_resource type="PackedScene" uid="uid://d1yh62f6cspre" path="res://Faction1/Buildings/Friendly Spawners/Super Spawner/super_unit_spawner.tscn" id="3_5he8y"]
+[ext_resource type="PackedScene" uid="uid://cx4ik4i18ymn5" path="res://Faction1/Buildings/Friendly Spawners/Heavy Spawner/heavy_unit_spawner.tscn" id="4_332ef"]
+[ext_resource type="PackedScene" uid="uid://cd7a8u71o5lap" path="res://Faction1/Buildings/Friendly Spawners/Unit Spawner/unit_spawner.tscn" id="5_cqdrh"]
+
+[node name="Faction 1 Base" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1303.0
+offset_bottom = 876.0
+mouse_filter = 1
+color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[node name="Resource Building" parent="." instance=ExtResource("1_thssm")]
+position = Vector2(103, 467)
+
+[node name="Flying Unit Spawner" parent="." instance=ExtResource("2_p436r")]
+position = Vector2(353, 119)
+
+[node name="Super Unit Spawner" parent="." instance=ExtResource("3_5he8y")]
+position = Vector2(359, 805)
+
+[node name="Heavy Unit Spawner" parent="." instance=ExtResource("4_332ef")]
+position = Vector2(923, 813)
+
+[node name="Unit Spawner" parent="." instance=ExtResource("5_cqdrh")]
+position = Vector2(935, 120)

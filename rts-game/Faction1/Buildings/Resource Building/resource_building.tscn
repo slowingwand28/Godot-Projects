@@ -21,7 +21,6 @@ bg_color = Color(0.154627, 0.68611, 0.646531, 1)
 [node name="Resource Building" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-input_pickable = true
 script = ExtResource("1_yj2tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
