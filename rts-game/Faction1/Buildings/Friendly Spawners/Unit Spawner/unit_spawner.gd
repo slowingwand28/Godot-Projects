@@ -9,7 +9,8 @@ var selected = false
 var currTime = 0 
 var que = 0
 var spawning = false
-
+@onready var spawnPoint = get_parent().get_node("Spawn Point").position
+@onready var rallyPoint = get_parent().get_node("Rally Point").position
 @onready var menu = preload("res://Game/Menus/unit_spawn_menu.tscn")
 #Unit name must be "Standard", "Heavy", "Flying", or "Super".
 @export var unitName = "Standard"
@@ -68,14 +69,13 @@ func spawnUnit():
 	currTime = 0
 	bar.visible = false
 	
-	var randomPosX = randi_range(-100, 100)
-	var randomPosY = randi_range(-100, 100)
-	
 	var path = get_tree().get_root().get_node("World/Friendly Units")
 	var worldPath = get_tree().get_root().get_node("World")
 	var newUnit = unitScene.instantiate()
-	newUnit.position = Vector2((position.x + randomPosX), (position.y + randomPosY)) #housePos + Vector2(randomPosX, randomPosY)
+	newUnit.position = spawnPoint
+	newUnit.rallyPoint = rallyPoint
 	path.add_child(newUnit)
+	newUnit.first_move()
 	worldPath.get_units()
 	
 	que -= 1

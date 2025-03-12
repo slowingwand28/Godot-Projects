@@ -28,3 +28,9 @@ position = Vector2(923, 813)
 
 [node name="Unit Spawner" parent="." instance=ExtResource("5_cqdrh")]
 position = Vector2(935, 120)
+
+[node name="Spawn Point" type="Marker2D" parent="."]
+position = Vector2(660, 438)
+
+[node name="Rally Point" type="Marker2D" parent="."]
+position = Vector2(1428, 442)

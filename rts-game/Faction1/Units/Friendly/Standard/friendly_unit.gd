@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var max_health = 4
 @export var attack_damage = 1
 var follow_cursor = false
+var rallyPoint = Vector2()
 var mouseEntered = false
 var selected = false
 var health
@@ -82,3 +83,6 @@ func fighting():
 
 func _on_timer_timeout() -> void:
 	fighting()
+
+func first_move():
+	target = rallyPoint

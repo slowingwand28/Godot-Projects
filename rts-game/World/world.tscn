@@ -16,15 +16,6 @@ script = ExtResource("1_44d2v")
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -2
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-offset_left = -59.0
-offset_top = -68.0
-offset_right = 1201.0
-offset_bottom = 710.0
-mouse_filter = 1
-color = Color(0.177237, 0.445823, 0.169808, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(577, 324)
 script = ExtResource("1_6jbkn")
