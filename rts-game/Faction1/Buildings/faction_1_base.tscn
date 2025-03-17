@@ -8,29 +8,23 @@
 
 [node name="Faction 1 Base" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1303.0
-offset_bottom = 876.0
-mouse_filter = 1
-color = Color(0.552956, 0.552956, 0.552956, 1)
-
 [node name="Resource Building" parent="." instance=ExtResource("1_thssm")]
-position = Vector2(103, 467)
+position = Vector2(228, 447)
 
 [node name="Flying Unit Spawner" parent="." instance=ExtResource("2_p436r")]
-position = Vector2(353, 119)
+position = Vector2(221, 151)
 
 [node name="Super Unit Spawner" parent="." instance=ExtResource("3_5he8y")]
-position = Vector2(359, 805)
+position = Vector2(234, 724)
 
 [node name="Heavy Unit Spawner" parent="." instance=ExtResource("4_332ef")]
-position = Vector2(923, 813)
+position = Vector2(898, 730)
 
 [node name="Unit Spawner" parent="." instance=ExtResource("5_cqdrh")]
-position = Vector2(935, 120)
+position = Vector2(894, 144)
 
 [node name="Spawn Point" type="Marker2D" parent="."]
-position = Vector2(660, 438)
+position = Vector2(660, 425)
 
 [node name="Rally Point" type="Marker2D" parent="."]
-position = Vector2(1428, 442)
+position = Vector2(1170, 425)
