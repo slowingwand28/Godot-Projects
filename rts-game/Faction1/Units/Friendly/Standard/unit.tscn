@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://q8co5f0wnjhm"]
 
 [ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_c62ov"]
-[ext_resource type="Texture2D" uid="uid://deedbtinhdtgv" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="3_837qu"]
+[ext_resource type="Texture2D" uid="uid://c3om522xxxy4c" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="3_837qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
 resource_local_to_scene = true
 size = Vector2(63, 92)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
-radius = 68.0074
+radius = 72.0069
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
@@ -28,11 +28,11 @@ input_pickable = true
 script = ExtResource("1_c62ov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 5)
+position = Vector2(-2.5, 3)
 shape = SubResource("RectangleShape2D_ix7du")
 
 [node name="Lizard-grunt" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_837qu")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -47,17 +47,17 @@ one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
 offset_left = -43.0
-offset_top = -51.0
+offset_top = -76.0
 offset_right = 43.0
-offset_bottom = -42.0
+offset_bottom = -67.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Box" type="Panel" parent="."]
 offset_left = -56.0
-offset_top = -55.0
-offset_right = 59.0
+offset_top = -65.0
+offset_right = 62.0
 offset_bottom = 58.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_07gmc")

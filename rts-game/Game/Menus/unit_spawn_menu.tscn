@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://6d6o4b8mi8v5"]
 
 [ext_resource type="Script" uid="uid://bdmb67085lrmr" path="res://Game/Menus/unit_spawn_menu.gd" id="1_rafii"]
-[ext_resource type="Texture2D" uid="uid://deedbtinhdtgv" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="2_qigx2"]
+[ext_resource type="Texture2D" uid="uid://c3om522xxxy4c" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="2_qigx2"]
 [ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="3_qigx2"]
 [ext_resource type="Texture2D" uid="uid://b2tb172i4kkp1" path="res://Faction1/Units/Friendly/Flying/flying_unit-placeholder.png" id="4_xk5cu"]
 [ext_resource type="Texture2D" uid="uid://5rpy34q5tbv3" path="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png" id="5_cf0q0"]
@@ -53,7 +53,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -48)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_qigx2")
 
 [node name="Heavy Placeholder Sprite" type="Sprite2D" parent="."]
