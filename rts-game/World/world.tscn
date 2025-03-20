@@ -336,7 +336,6 @@ script = ExtResource("1_6jbkn")
 y_sort_enabled = true
 
 [node name="Enemy Units" type="Node2D" parent="."]
-visible = false
 
 [node name="Enemy Unit" parent="Enemy Units" instance=ExtResource("4_ql0is")]
 position = Vector2(2151, 575)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2tb172i4kkp1"
-path="res://.godot/imported/flying_unit-placeholder.png-524b2e86e787905db74fab52036701cc.ctex"
+uid="uid://bb48fliycqhws"
+path="res://.godot/imported/anky.png-aa79efa8ce0dc47760ecf47ea05915c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Units/Friendly/Flying/flying_unit-placeholder.png"
-dest_files=["res://.godot/imported/flying_unit-placeholder.png-524b2e86e787905db74fab52036701cc.ctex"]
+source_file="res://Faction1/Units/Friendly/Heavy/anky.png"
+dest_files=["res://.godot/imported/anky.png-aa79efa8ce0dc47760ecf47ea05915c9.ctex"]
 
 [params]
 

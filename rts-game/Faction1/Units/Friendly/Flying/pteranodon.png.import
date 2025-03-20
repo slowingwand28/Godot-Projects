@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgi27cgyqahbh"
-path="res://.godot/imported/heavy_unit-placeholder.png-c915a4d6b454a88a528278cc3c624e04.ctex"
+uid="uid://dowivpct2wfvb"
+path="res://.godot/imported/pteranodon.png-e49af7d632aa5614ce402516f730335a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png"
-dest_files=["res://.godot/imported/heavy_unit-placeholder.png-c915a4d6b454a88a528278cc3c624e04.ctex"]
+source_file="res://Faction1/Units/Friendly/Flying/pteranodon.png"
+dest_files=["res://.godot/imported/pteranodon.png-e49af7d632aa5614ce402516f730335a.ctex"]
 
 [params]
 

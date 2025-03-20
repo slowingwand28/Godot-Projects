@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://tq6ob01y788y"]
 
 [ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_thqkk"]
-[ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="2_n1uxv"]
+[ext_resource type="Texture2D" uid="uid://bb48fliycqhws" path="res://Faction1/Units/Friendly/Heavy/anky.png" id="2_be0fg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7du"]
-resource_local_to_scene = true
-size = Vector2(162, 94)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be0fg"]
+radius = 51.0
+height = 278.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt8jy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,8 +16,8 @@ border_width_bottom = 5
 border_color = Color(0.180392, 0.239216, 0.878431, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij437"]
-radius = 58.0
-height = 220.0
+radius = 73.0
+height = 390.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
@@ -34,16 +34,19 @@ max_health = 12
 attack_damage = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ix7du")
+position = Vector2(4, 19)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_be0fg")
 
 [node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_n1uxv")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_be0fg")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -86.0
+offset_left = -151.0
 offset_top = -52.0
-offset_right = 86.0
-offset_bottom = 51.0
+offset_right = 180.0
+offset_bottom = 78.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 
@@ -51,6 +54,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rt8jy")
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(11, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ij437")
 
@@ -59,9 +63,9 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
-offset_left = -64.0
+offset_left = -93.0
 offset_top = -66.0
-offset_right = 64.0
+offset_right = 94.0
 offset_bottom = -57.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ap0e")
 show_percentage = false

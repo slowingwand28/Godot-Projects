@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdmb67085lrmr" path="res://Game/Menus/unit_spawn_menu.gd" id="1_rafii"]
 [ext_resource type="Texture2D" uid="uid://c3om522xxxy4c" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="2_qigx2"]
-[ext_resource type="Texture2D" uid="uid://cgi27cgyqahbh" path="res://Faction1/Units/Friendly/Heavy/heavy_unit-placeholder.png" id="3_qigx2"]
-[ext_resource type="Texture2D" uid="uid://b2tb172i4kkp1" path="res://Faction1/Units/Friendly/Flying/flying_unit-placeholder.png" id="4_xk5cu"]
+[ext_resource type="Texture2D" uid="uid://bb48fliycqhws" path="res://Faction1/Units/Friendly/Heavy/anky.png" id="3_qigx2"]
+[ext_resource type="Texture2D" uid="uid://dowivpct2wfvb" path="res://Faction1/Units/Friendly/Flying/pteranodon.png" id="4_qigx2"]
 [ext_resource type="Texture2D" uid="uid://5rpy34q5tbv3" path="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png" id="5_cf0q0"]
 
 [node name="Unit Spawn Menu" type="Node2D"]
@@ -58,13 +58,15 @@ texture = ExtResource("2_qigx2")
 
 [node name="Heavy Placeholder Sprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-1, -42)
+position = Vector2(5, -59)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_qigx2")
 
 [node name="Flying Placeholder Sprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(3, -42)
-texture = ExtResource("4_xk5cu")
+position = Vector2(-1, -44)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_qigx2")
 
 [node name="Super Placehoder Sprite" type="Sprite2D" parent="."]
 visible = false
