@@ -33,11 +33,11 @@ speed = 250.0
 max_health = 6
 attack_damage = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_uhtco")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
+[node name="Unit Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_k0ftr")
 

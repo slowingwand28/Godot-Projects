@@ -30,13 +30,14 @@ pop_count = 8
 speed = 100.0
 max_health = 16
 attack_damage = 6
+t_rex = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(11, 1)
 rotation = 1.0472
 shape = SubResource("CapsuleShape2D_xa4e7")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
+[node name="Unit Sprite" type="Sprite2D" parent="."]
 position = Vector2(5, -5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_sbrb0")

@@ -33,17 +33,17 @@ speed = 150.0
 max_health = 12
 attack_damage = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(4, 19)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_be0fg")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
+[node name="Unit Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_be0fg")
 
 [node name="Box" type="Panel" parent="."]
-offset_left = -151.0
+offset_left = -178.0
 offset_top = -52.0
 offset_right = 180.0
 offset_bottom = 78.0

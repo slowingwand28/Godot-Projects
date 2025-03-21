@@ -3,11 +3,14 @@ extends CharacterBody2D
 @onready var box = $Box
 @onready var timer = $Timer
 @onready var health_bar = $"Health Bar"
+@onready var sprite = $"Unit Sprite"
+@onready var collision_box = $CollisionBox
 @onready var target = position
 @export var pop_count = 1
 @export var speed = 200.0
 @export var max_health = 4
 @export var attack_damage = 1
+@export var t_rex = false
 var follow_cursor = false
 var rallyPoint = Vector2()
 var mouseEntered = false
@@ -59,6 +62,16 @@ func _physics_process(delta: float) -> void:
 		if selected:
 			target = get_global_mouse_position()
 	velocity = position.direction_to(target) * speed
+	
+	if position.x > target.x:
+		sprite.flip_h = true
+		if t_rex == true:
+			collision_box.rotation_degrees = 120.0
+	else:
+		sprite.flip_h = false
+		if t_rex == true:
+			collision_box.rotation_degrees = 60.0
+	
 	if position.distance_to(target) > 10:
 		move_and_slide()
 
