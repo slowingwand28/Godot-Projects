@@ -341,32 +341,32 @@ y_sort_enabled = true
 position = Vector2(2151, 575)
 
 [node name="Enemy Unit2" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2151, 502)
+position = Vector2(2152, 471)
 
 [node name="Enemy Unit3" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2204, 574)
+position = Vector2(2247, 575)
 
 [node name="Enemy Unit5" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2094, 574)
+position = Vector2(2056, 572)
 
 [node name="Enemy Unit6" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2394, 580)
+position = Vector2(2437, 601)
 
 [node name="Enemy Unit7" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2439, 509)
+position = Vector2(2516, 477)
 
 [node name="Enemy Unit4" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2343, 511)
+position = Vector2(2352, 482)
 
 [node name="Enemy Heavy Unit" parent="Enemy Units" instance=ExtResource("10_hkm8k")]
-position = Vector2(1840, 546)
+position = Vector2(1861, 697)
 speed = 200
 
 [node name="Enemy Flying Unit" parent="Enemy Units" instance=ExtResource("11_kpsmb")]
-position = Vector2(1768, 349)
+position = Vector2(1884, 283)
 
 [node name="Enemy Super Unit" parent="Enemy Units" instance=ExtResource("2_m085u")]
-position = Vector2(2671, 525)
+position = Vector2(2942, 527)
 
 [node name="Faction 1 Base" parent="." instance=ExtResource("8_eidgh")]
 

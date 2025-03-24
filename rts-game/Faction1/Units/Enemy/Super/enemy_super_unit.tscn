@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://df4np5ws26app"]
 
 [ext_resource type="Script" uid="uid://24ovgm7bb7u4" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_q86mc"]
-[ext_resource type="Texture2D" uid="uid://ssiu4snfijd6" path="res://Faction1/Units/Enemy/Super/enemy_super_unit-placeholder.png" id="2_el6cs"]
+[ext_resource type="Texture2D" uid="uid://5rpy34q5tbv3" path="res://Faction1/Units/Friendly/Super/T_Rex 03-04-2025.png" id="2_sli07"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhl6t"]
-resource_local_to_scene = true
-size = Vector2(206, 153)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3i1r5"]
+radius = 84.9519
+height = 346.808
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iu276"]
-radius = 133.821
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ior1"]
+radius = 223.002
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee7ki"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dssv1"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Enemy Super Unit" type="CharacterBody2D" groups=["Enemy Units"]]
@@ -23,30 +23,34 @@ speed = 100
 max_health = 16
 attack_damage = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_rhl6t")
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(11, 1)
+rotation = 1.0472
+shape = SubResource("CapsuleShape2D_3i1r5")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_el6cs")
+[node name="Unit Sprite" type="Sprite2D" parent="."]
+position = Vector2(5, -5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_sli07")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_iu276")
+shape = SubResource("CircleShape2D_8ior1")
+debug_color = Color(0.806127, 0.398526, 0.322587, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
-offset_left = -97.0
-offset_top = -98.0
-offset_right = 97.0
-offset_bottom = -89.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_ee7ki")
+offset_left = -127.0
+offset_top = -149.0
+offset_right = 127.0
+offset_bottom = -134.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_dssv1")
 show_percentage = false
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

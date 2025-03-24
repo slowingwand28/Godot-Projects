@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://0374he4d84em"]
 
-[ext_resource type="Texture2D" uid="uid://cdtfpr2cumqpo" path="res://Faction1/Units/Enemy/Standard/enemy-unit-placeholder.png" id="1_eqhu5"]
 [ext_resource type="Script" uid="uid://24ovgm7bb7u4" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_ul1mu"]
+[ext_resource type="Texture2D" uid="uid://c3om522xxxy4c" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="2_hpwn5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdg7f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbo40"]
 resource_local_to_scene = true
-size = Vector2(43, 68)
+size = Vector2(63, 92)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ir6d7"]
-radius = 48.0104
+[sub_resource type="CircleShape2D" id="CircleShape2D_4m184"]
+radius = 72.0069
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f18qq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flr3w"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Enemy Unit" type="CharacterBody2D" groups=["Enemy Units"]]
@@ -20,19 +20,20 @@ collision_mask = 7
 input_pickable = true
 script = ExtResource("1_ul1mu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_hdg7f")
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 3)
+shape = SubResource("RectangleShape2D_vbo40")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_eqhu5")
+[node name="Unit Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_hpwn5")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_ir6d7")
+shape = SubResource("CircleShape2D_4m184")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -40,11 +41,12 @@ one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
 offset_left = -43.0
-offset_top = -51.0
+offset_top = -76.0
 offset_right = 43.0
-offset_bottom = -42.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_f18qq")
+offset_bottom = -67.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_flr3w")
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

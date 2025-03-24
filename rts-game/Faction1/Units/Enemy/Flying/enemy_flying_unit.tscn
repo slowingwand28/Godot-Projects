@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://y7y0lccrblpf"]
 
 [ext_resource type="Script" uid="uid://24ovgm7bb7u4" path="res://Faction1/Units/Enemy/Standard/enemy_unit.gd" id="1_wk4up"]
-[ext_resource type="Texture2D" uid="uid://qktpovp4tc5f" path="res://Faction1/Units/Enemy/Flying/enemy_flying_unit-placeholder.png" id="2_58og4"]
+[ext_resource type="Texture2D" uid="uid://dowivpct2wfvb" path="res://Faction1/Units/Friendly/Flying/pteranodon.png" id="2_cydr2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o77ab"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_stjo7"]
 resource_local_to_scene = true
-radius = 38.0132
+radius = 52.6118
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ce83g"]
-radius = 49.0918
+[sub_resource type="CircleShape2D" id="CircleShape2D_622ne"]
+radius = 79.0063
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl3t2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_533io"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
 
 [node name="Enemy Flying Unit" type="CharacterBody2D" groups=["Enemy Units"]]
@@ -23,18 +23,21 @@ speed = 250
 max_health = 6
 attack_damage = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_o77ab")
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_stjo7")
 
-[node name="Placeholder Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_58og4")
+[node name="Unit Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_cydr2")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_ce83g")
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_622ne")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -42,12 +45,11 @@ one_shot = true
 
 [node name="Health Bar" type="ProgressBar" parent="."]
 offset_left = -43.0
-offset_top = -56.0
-offset_right = 43.0
-offset_bottom = -47.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_yl3t2")
+offset_top = -66.0
+offset_right = 72.0
+offset_bottom = -57.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_533io")
 show_percentage = false
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
