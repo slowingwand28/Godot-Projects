@@ -61,9 +61,7 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 4:4/0 = 0
 5:4/0 = 0
-5:4/0/terrain = 0
 6:4/0 = 0
-6:4/0/terrain = 0
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
@@ -74,7 +72,6 @@ texture_region_size = Vector2i(32, 32)
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
-6:5/0/terrain = 0
 7:5/0 = 0
 8:5/0 = 0
 9:5/0 = 0
@@ -83,13 +80,10 @@ texture_region_size = Vector2i(32, 32)
 2:6/0 = 0
 3:6/0 = 0
 4:6/0 = 0
-4:6/0/terrain = 0
 4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 7.64714, 16, 7.64714, 16, 16, -16, 16)
 5:6/0 = 0
-5:6/0/terrain = 0
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 7.64714, 16, 7.64714, 16, 16, -16, 16)
 6:6/0 = 0
-6:6/0/terrain = 0
 6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 7.64714, 16, 7.64714, 16, 16, -16, 16)
 7:6/0 = 0
 8:6/0 = 0
@@ -343,7 +337,7 @@ tile_map_data = PackedByteArray("AADu/wIAAAAEAAUAAADu/wMAAAAEAAUAAADu/wQAAAAEAAU
 tile_set = SubResource("TileSet_lo5ox")
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(644, 560)
+position = Vector2(778, 1549)
 scale = Vector2(0.909845, -1.85381)
 zoom = Vector2(0.5, 0.5)
 limit_left = -590
@@ -356,40 +350,39 @@ script = ExtResource("1_6jbkn")
 y_sort_enabled = true
 
 [node name="Enemy Units" type="Node2D" parent="."]
-position = Vector2(0, 1061)
 
 [node name="Enemy Unit" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2782, 559)
+position = Vector2(2804, 1634)
 
 [node name="Enemy Unit2" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2783, 455)
+position = Vector2(2805, 1530)
 
 [node name="Enemy Unit3" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2878, 559)
+position = Vector2(2900, 1634)
 
 [node name="Enemy Unit5" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2687, 556)
+position = Vector2(2709, 1631)
 
 [node name="Enemy Unit6" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(3068, 585)
+position = Vector2(3090, 1660)
 
 [node name="Enemy Unit7" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(3147, 461)
+position = Vector2(3169, 1536)
 
 [node name="Enemy Unit4" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2983, 466)
+position = Vector2(3005, 1541)
 
 [node name="Enemy Heavy Unit" parent="Enemy Units" instance=ExtResource("10_hkm8k")]
-position = Vector2(2492, 681)
+position = Vector2(2514, 1756)
 speed = 200
 
 [node name="Enemy Flying Unit" parent="Enemy Units" instance=ExtResource("11_kpsmb")]
-position = Vector2(2606, 221)
+position = Vector2(2628, 1296)
 
 [node name="Enemy Super Unit" parent="Enemy Units" instance=ExtResource("2_m085u")]
-position = Vector2(3573, 511)
+position = Vector2(3595, 1586)
 
 [node name="Faction 1 Base" parent="." instance=ExtResource("8_eidgh")]
-position = Vector2(-275, 1148)
+position = Vector2(0, 1100)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]

@@ -9,8 +9,8 @@ var selected = false
 var currTime = 0 
 var que = 0
 var spawning = false
-#@onready var spawnPoint = get_parent().get_node("Spawn Point").position
-#@onready var rallyPoint = get_parent().get_node("Rally Point").position
+@onready var spawnPoint = get_parent().get_node("Spawn Point").global_position
+@onready var rallyPoint = get_parent().get_node("Rally Point").global_position
 @onready var menu = preload("res://Game/Menus/unit_spawn_menu.tscn")
 #Unit name must be "Standard", "Heavy", "Flying", or "Super".
 @export var unitName = "Standard"
@@ -72,8 +72,6 @@ func spawnUnit():
 	var path = get_tree().get_root().get_node("World/Friendly Units")
 	var worldPath = get_tree().get_root().get_node("World")
 	var newUnit = unitScene.instantiate()
-	var spawnPoint = get_parent().get_node("Spawn Point").position
-	var rallyPoint = get_parent().get_node("Rally Point").position
 	newUnit.position = spawnPoint
 	newUnit.rallyPoint = rallyPoint
 	path.add_child(newUnit)
