@@ -3,6 +3,8 @@ extends Camera2D
 var zoomTarget:Vector2
 @export var zoomSpeed = 10.0
 @export var panSpeed = 1000.0
+var zoomMin = Vector2(0.25, 0.25)
+var zoomMax = Vector2(2, 2)
 
 var mousePos = Vector2()
 var mousePosGlobal = Vector2()
@@ -59,6 +61,8 @@ func Zoom(delta):
 		zoomTarget *= 1.1
 	if Input.is_action_just_pressed("Zoom Out"):
 		zoomTarget *= 0.9
+	
+	zoomTarget = clamp(zoomTarget, zoomMin, zoomMax)
 	zoom = zoom.slerp(zoomTarget, zoomSpeed * delta)
 
 func Pan(delta):
