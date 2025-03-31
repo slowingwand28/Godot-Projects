@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bgjy4omqa1kbi"]
+[gd_scene load_steps=17 format=4 uid="uid://bgjy4omqa1kbi"]
 
 [ext_resource type="Script" uid="uid://d0mf7rbks77rc" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" uid="uid://bgww2rmudxun" path="res://World/world.gd" id="1_44d2v"]
@@ -325,6 +325,11 @@ sources/0 = SubResource("TileSetAtlasSource_w47uh")
 sources/1 = SubResource("TileSetAtlasSource_0wqet")
 sources/5 = SubResource("TileSetAtlasSource_awrha")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lo5ox"]
+vertices = PackedVector2Array(10669, 3082, -536, 3087.99, -537, 34, 10672, 34)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-547, 24, -546, 3098, 10679, 3092, 10682, 24)])
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_44d2v")
@@ -386,5 +391,9 @@ position = Vector2(3595, 1586)
 
 [node name="Faction 1 Base" parent="." instance=ExtResource("8_eidgh")]
 position = Vector2(0, 1100)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(2, 4)
+navigation_polygon = SubResource("NavigationPolygon_lo5ox")
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]
