@@ -393,7 +393,7 @@ position = Vector2(3595, 1586)
 position = Vector2(0, 1100)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(2, 4)
+position = Vector2(-362, 94)
 navigation_polygon = SubResource("NavigationPolygon_lo5ox")
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]
