@@ -1,16 +1,20 @@
-[gd_scene load_steps=17 format=4 uid="uid://bgjy4omqa1kbi"]
+[gd_scene load_steps=21 format=4 uid="uid://bgjy4omqa1kbi"]
 
 [ext_resource type="Script" uid="uid://d0mf7rbks77rc" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" uid="uid://bgww2rmudxun" path="res://World/world.gd" id="1_44d2v"]
 [ext_resource type="PackedScene" uid="uid://b2nkq8fra0k8y" path="res://Game/UI/ui.tscn" id="1_yla30"]
-[ext_resource type="PackedScene" uid="uid://df4np5ws26app" path="res://Faction1/Units/Enemy/Super/enemy_super_unit.tscn" id="2_m085u"]
 [ext_resource type="Texture2D" uid="uid://bhqu7g0eb7rgv" path="res://World/basic_tileset_and_assets_standard/terrain_tiles_v2.png" id="2_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://ca7en13niyyjt" path="res://World/basic_tileset_and_assets_standard/water_and_island_tiles_v2.png" id="3_lo5ox"]
 [ext_resource type="Texture2D" uid="uid://d1mqerfh255ll" path="res://World/basic_tileset_and_assets_standard/fence_tiles.png" id="4_h2aik"]
-[ext_resource type="PackedScene" uid="uid://0374he4d84em" path="res://Faction1/Units/Enemy/Standard/enemy_unit.tscn" id="4_ql0is"]
+[ext_resource type="PackedScene" uid="uid://tq6ob01y788y" path="res://Faction1/Units/Friendly/Heavy/heavy_unit.tscn" id="7_f23eu"]
 [ext_resource type="PackedScene" uid="uid://dde1imoemdeyj" path="res://Faction1/Buildings/faction_1_base.tscn" id="8_eidgh"]
-[ext_resource type="PackedScene" uid="uid://d0dumxhyi84k8" path="res://Faction1/Units/Enemy/Heavy/enemy_heavy_unit.tscn" id="10_hkm8k"]
-[ext_resource type="PackedScene" uid="uid://y7y0lccrblpf" path="res://Faction1/Units/Enemy/Flying/enemy_flying_unit.tscn" id="11_kpsmb"]
+[ext_resource type="PackedScene" uid="uid://c3n31rljl01eg" path="res://Faction1/Units/Friendly/Flying/flying_unit.tscn" id="8_oeat8"]
+[ext_resource type="PackedScene" uid="uid://6vpsc23tpg1" path="res://Faction1/Units/Friendly/Super/super_unit.tscn" id="9_5xkvv"]
+[ext_resource type="PackedScene" uid="uid://q8co5f0wnjhm" path="res://Faction1/Units/Friendly/Standard/unit.tscn" id="10_kcyjf"]
+[ext_resource type="PackedScene" uid="uid://b28jft20x0mkq" path="res://Army/Units/Infantry/infantry.tscn" id="11_xw5lg"]
+[ext_resource type="PackedScene" uid="uid://c57xd1g268wi7" path="res://Army/Units/Tank/tank.tscn" id="12_0lysu"]
+[ext_resource type="PackedScene" uid="uid://jtp6oj42f513" path="res://Army/Units/Helicopter/helicopter.tscn" id="13_26uyv"]
+[ext_resource type="PackedScene" uid="uid://cyr37pramegdy" path="res://Army/Units/Truck/truck.tscn" id="14_dqu5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w47uh"]
 texture = ExtResource("2_oe8m4")
@@ -356,44 +360,68 @@ script = ExtResource("1_6jbkn")
 [node name="Friendly Units" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Heavy Unit" parent="Friendly Units" instance=ExtResource("7_f23eu")]
+position = Vector2(1298, 1716)
+
+[node name="Heavy Unit2" parent="Friendly Units" instance=ExtResource("7_f23eu")]
+position = Vector2(1304, 1257)
+
+[node name="Flying Unit" parent="Friendly Units" instance=ExtResource("8_oeat8")]
+position = Vector2(1581, 1154)
+
+[node name="Flying Unit2" parent="Friendly Units" instance=ExtResource("8_oeat8")]
+position = Vector2(1238, 1154)
+
+[node name="Flying Unit3" parent="Friendly Units" instance=ExtResource("8_oeat8")]
+position = Vector2(1224, 1867)
+
+[node name="Flying Unit4" parent="Friendly Units" instance=ExtResource("8_oeat8")]
+position = Vector2(1561, 1873)
+
+[node name="Super Unit" parent="Friendly Units" instance=ExtResource("9_5xkvv")]
+position = Vector2(1251, 1493)
+
+[node name="Unit" parent="Friendly Units" instance=ExtResource("10_kcyjf")]
+position = Vector2(1614, 1344)
+
+[node name="Unit2" parent="Friendly Units" instance=ExtResource("10_kcyjf")]
+position = Vector2(1776, 1510)
+
+[node name="Unit3" parent="Friendly Units" instance=ExtResource("10_kcyjf")]
+position = Vector2(1619, 1689)
+
 [node name="Enemy Units" type="Node2D" parent="."]
 
-[node name="Enemy Unit" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2804, 1634)
+[node name="Infantry" parent="Enemy Units" instance=ExtResource("11_xw5lg")]
+position = Vector2(2005, 1512)
 
-[node name="Enemy Unit2" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2805, 1530)
+[node name="Infantry2" parent="Enemy Units" instance=ExtResource("11_xw5lg")]
+position = Vector2(2134, 1661)
 
-[node name="Enemy Unit3" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2900, 1634)
+[node name="Infantry3" parent="Enemy Units" instance=ExtResource("11_xw5lg")]
+position = Vector2(2140, 1390)
 
-[node name="Enemy Unit5" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(2709, 1631)
+[node name="Tank" parent="Enemy Units" instance=ExtResource("12_0lysu")]
+position = Vector2(2390, 1507)
 
-[node name="Enemy Unit6" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(3090, 1660)
+[node name="Helicopter" parent="Enemy Units" instance=ExtResource("13_26uyv")]
+position = Vector2(2353, 1284)
 
-[node name="Enemy Unit7" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(3169, 1536)
+[node name="Helicopter2" parent="Enemy Units" instance=ExtResource("13_26uyv")]
+position = Vector2(2371, 1821)
 
-[node name="Enemy Unit4" parent="Enemy Units" instance=ExtResource("4_ql0is")]
-position = Vector2(3005, 1541)
+[node name="Truck" parent="Enemy Units" instance=ExtResource("14_dqu5g")]
+position = Vector2(2045, 1818)
 
-[node name="Enemy Heavy Unit" parent="Enemy Units" instance=ExtResource("10_hkm8k")]
-position = Vector2(2514, 1756)
-speed = 200
-
-[node name="Enemy Flying Unit" parent="Enemy Units" instance=ExtResource("11_kpsmb")]
-position = Vector2(2628, 1296)
-
-[node name="Enemy Super Unit" parent="Enemy Units" instance=ExtResource("2_m085u")]
-position = Vector2(3595, 1586)
+[node name="Truck2" parent="Enemy Units" instance=ExtResource("14_dqu5g")]
+position = Vector2(1997, 1247)
 
 [node name="Faction 1 Base" parent="." instance=ExtResource("8_eidgh")]
 position = Vector2(0, 1100)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-362, 94)
+visible = false
+position = Vector2(-6, 4)
 navigation_polygon = SubResource("NavigationPolygon_lo5ox")
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]

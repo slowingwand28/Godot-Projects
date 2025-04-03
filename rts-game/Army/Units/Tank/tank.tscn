@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c57xd1g268wi7"]
+
+[ext_resource type="Texture2D" uid="uid://dk6hr1ycbum4a" path="res://Army/Units/Tank/Tenk.png" id="1_tabw7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrhx1"]
+radius = 141.032
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfjgt"]
+radius = 440.092
+
+[node name="Tank" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 26)
+shape = SubResource("CircleShape2D_hrhx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_tabw7")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(-1, 26)
+shape = SubResource("CircleShape2D_yfjgt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0

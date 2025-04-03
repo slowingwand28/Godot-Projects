@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://jtp6oj42f513"]
+
+[ext_resource type="Texture2D" uid="uid://dyudsnynb0bv4" path="res://Army/Units/Helicopter/Helicopter.png" id="1_ngkny"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4g04r"]
+radius = 96.0052
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ngkny"]
+radius = 290.007
+
+[node name="Helicopter" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("CircleShape2D_4g04r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("1_ngkny")
+
+[node name="Range" type="Area2D" parent="."]
+position = Vector2(1, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_ngkny")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -114.0
+offset_top = -142.0
+offset_right = 114.0
+offset_bottom = -119.0
+show_percentage = false
