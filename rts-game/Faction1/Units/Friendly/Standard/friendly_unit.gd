@@ -5,7 +5,6 @@ extends CharacterBody2D
 @onready var health_bar = $"Health Bar"
 @onready var sprite = $"Unit Sprite"
 @onready var collision_box = $CollisionBox
-@onready var nav_agent = $NavigationAgent2D
 @onready var target = position
 @export var pop_count = 1
 @export var speed = 200.0
@@ -62,17 +61,7 @@ func _physics_process(delta: float) -> void:
 	if follow_cursor == true:
 		if selected:
 			target = get_global_mouse_position()
-	#velocity = position.direction_to(target) * speed
-	nav_agent.target_position = target
-	
-	var current_agent_position = self.global_position
-	var next_path_position = nav_agent.get_next_path_position()
-	var new_velocity = current_agent_position.direction_to(next_path_position) * speed
-	
-	if nav_agent.avoidance_enabled:
-		nav_agent.set_velocity(new_velocity)
-	else:
-		_on_navigation_agent_2d_velocity_computed(new_velocity)
+	velocity = position.direction_to(target) * speed
 	
 	if position.x > target.x:
 		sprite.flip_h = true
@@ -95,10 +84,12 @@ func _on_mouse_exited() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy Units"):
 		enemies.append(body)
+		print("enemy detected")
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Enemy Units"):
 		enemies.erase(body)
+		print("enemy lost")
 
 func fighting():
 	if len(enemies) > 0:

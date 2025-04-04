@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b28jft20x0mkq"]
+[gd_scene load_steps=5 format=3 uid="uid://b28jft20x0mkq"]
 
+[ext_resource type="Script" uid="uid://daycka3hxpv3n" path="res://Army/Units/Infantry/army_units.gd" id="1_7ri8r"]
 [ext_resource type="Texture2D" uid="uid://d5ewaf27w5em" path="res://Army/Units/Infantry/Grunt Girl 1.png" id="1_egfj5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_egfj5"]
-radius = 50.0
+radius = 35.0143
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ri8r"]
-radius = 325.467
+radius = 369.451
 
-[node name="Infantry" type="CharacterBody2D"]
+[node name="Infantry" type="CharacterBody2D" groups=["Enemy Units"]]
+script = ExtResource("1_7ri8r")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_egfj5")
@@ -23,15 +25,20 @@ position = Vector2(5, -2)
 scale = Vector2(0.75, 0.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+visible = false
 position = Vector2(-6.66667, 2.66667)
 shape = SubResource("CircleShape2D_7ri8r")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 offset_left = -58.0
 offset_top = -69.0
 offset_right = 58.0
 offset_bottom = -54.0
 show_percentage = false
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

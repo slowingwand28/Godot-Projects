@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh8ibud718isi"]
 
-[ext_resource type="Script" path="res://Scenes/tutorial_game.gd" id="1_45bml"]
+[ext_resource type="Script" uid="uid://dqgoamu2gra8f" path="res://Scenes/tutorial_game.gd" id="1_45bml"]
 [ext_resource type="PackedScene" uid="uid://bcmso05blwfu4" path="res://Scenes/player.tscn" id="1_dwjnh"]
 [ext_resource type="PackedScene" uid="uid://c0rubpuyo8g6" path="res://Scenes/pine_tree.tscn" id="2_u3h17"]
 

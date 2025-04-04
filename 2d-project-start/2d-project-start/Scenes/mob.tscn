@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnnn53d8sjgyc"]
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_nupnk"]
-[ext_resource type="Script" path="res://Scenes/mob.gd" id="1_wpkoj"]
+[ext_resource type="Script" uid="uid://b3r6gqs84bsvv" path="res://Scenes/mob.gd" id="1_wpkoj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjg0w"]
 radius = 52.2398
