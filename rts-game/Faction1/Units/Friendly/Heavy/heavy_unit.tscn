@@ -30,7 +30,7 @@ platform_floor_layers = 4294901760
 script = ExtResource("1_thqkk")
 pop_count = 3
 speed = 150.0
-max_health = 12
+max_health = 14
 attack_damage = 4
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

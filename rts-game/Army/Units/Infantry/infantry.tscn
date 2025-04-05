@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b28jft20x0mkq"]
+[gd_scene load_steps=6 format=3 uid="uid://b28jft20x0mkq"]
 
 [ext_resource type="Script" uid="uid://daycka3hxpv3n" path="res://Army/Units/Infantry/army_units.gd" id="1_7ri8r"]
 [ext_resource type="Texture2D" uid="uid://d5ewaf27w5em" path="res://Army/Units/Infantry/Grunt Girl 1.png" id="1_egfj5"]
@@ -9,7 +9,12 @@ radius = 35.0143
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ri8r"]
 radius = 369.451
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ri8r"]
+bg_color = Color(0.795304, 0.179342, 0.164844, 1)
+
 [node name="Infantry" type="CharacterBody2D" groups=["Enemy Units"]]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_7ri8r")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
@@ -23,14 +28,14 @@ texture = ExtResource("1_egfj5")
 [node name="Range" type="Area2D" parent="."]
 position = Vector2(5, -2)
 scale = Vector2(0.75, 0.75)
+collision_layer = 2
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-visible = false
 position = Vector2(-6.66667, 2.66667)
 shape = SubResource("CircleShape2D_7ri8r")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -38,7 +43,9 @@ offset_left = -58.0
 offset_top = -69.0
 offset_right = 58.0
 offset_bottom = -54.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7ri8r")
 show_percentage = false
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://jtp6oj42f513"]
+[gd_scene load_steps=6 format=3 uid="uid://jtp6oj42f513"]
 
+[ext_resource type="Script" uid="uid://daycka3hxpv3n" path="res://Army/Units/Infantry/army_units.gd" id="1_4g04r"]
 [ext_resource type="Texture2D" uid="uid://dyudsnynb0bv4" path="res://Army/Units/Helicopter/Helicopter.png" id="1_ngkny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4g04r"]
@@ -8,7 +9,17 @@ radius = 96.0052
 [sub_resource type="CircleShape2D" id="CircleShape2D_ngkny"]
 radius = 377.033
 
-[node name="Helicopter" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g04r"]
+bg_color = Color(0.796078, 0.180392, 0.164706, 1)
+
+[node name="Helicopter" type="CharacterBody2D" groups=["Enemy Units"]]
+collision_layer = 16
+collision_mask = 24
+script = ExtResource("1_4g04r")
+max_health = 6
+bullet_damage = 4
+bullet_speed = 1500
+reload_time = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
@@ -20,18 +31,23 @@ texture = ExtResource("1_ngkny")
 
 [node name="Range" type="Area2D" parent="."]
 position = Vector2(1, -7)
+collision_layer = 16
+collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" groups=["Enemy Units"]]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_ngkny")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 offset_left = -114.0
 offset_top = -142.0
 offset_right = 114.0
 offset_bottom = -119.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_4g04r")
 show_percentage = false
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

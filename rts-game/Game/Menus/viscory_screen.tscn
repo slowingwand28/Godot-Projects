@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cgodts5n0v301"]
+
+[node name="Viscory Screen" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 256.0
+offset_top = 148.0
+offset_right = 824.0
+offset_bottom = 476.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 446.0
+offset_top = 234.0
+offset_right = 633.0
+offset_bottom = 265.0
+text = "Congratulations!!!!!"
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 423.0
+offset_top = 292.0
+offset_right = 645.0
+offset_bottom = 341.0
+text = "You have successfully saved 
+the valley from the Invaders."

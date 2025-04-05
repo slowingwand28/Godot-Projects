@@ -28,7 +28,7 @@ input_pickable = true
 script = ExtResource("1_gmjyq")
 pop_count = 8
 speed = 100.0
-max_health = 16
+max_health = 20
 attack_damage = 6
 t_rex = true
 

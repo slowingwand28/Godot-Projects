@@ -30,7 +30,7 @@ input_pickable = true
 script = ExtResource("1_poqv3")
 pop_count = 2
 speed = 250.0
-max_health = 6
+max_health = 8
 attack_damage = 2
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

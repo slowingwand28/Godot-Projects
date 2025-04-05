@@ -20,6 +20,7 @@ Game="*res://Game/Game.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [global_group]

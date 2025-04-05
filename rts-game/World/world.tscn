@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bgjy4omqa1kbi"]
+[gd_scene load_steps=17 format=4 uid="uid://bgjy4omqa1kbi"]
 
 [ext_resource type="Script" uid="uid://d0mf7rbks77rc" path="res://World/camera.gd" id="1_6jbkn"]
 [ext_resource type="Script" uid="uid://bgww2rmudxun" path="res://World/world.gd" id="1_44d2v"]
@@ -7,12 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ca7en13niyyjt" path="res://World/basic_tileset_and_assets_standard/water_and_island_tiles_v2.png" id="3_lo5ox"]
 [ext_resource type="Texture2D" uid="uid://d1mqerfh255ll" path="res://World/basic_tileset_and_assets_standard/fence_tiles.png" id="4_h2aik"]
 [ext_resource type="PackedScene" uid="uid://dde1imoemdeyj" path="res://Faction1/Buildings/faction_1_base.tscn" id="8_eidgh"]
-[ext_resource type="PackedScene" uid="uid://q8co5f0wnjhm" path="res://Faction1/Units/Friendly/Standard/unit.tscn" id="10_kcyjf"]
 [ext_resource type="PackedScene" uid="uid://b28jft20x0mkq" path="res://Army/Units/Infantry/infantry.tscn" id="11_xw5lg"]
 [ext_resource type="PackedScene" uid="uid://c57xd1g268wi7" path="res://Army/Units/Tank/tank.tscn" id="12_0lysu"]
 [ext_resource type="Texture2D" uid="uid://dkm0cn7r186t" path="res://World/time_portal.png" id="12_h2aik"]
 [ext_resource type="PackedScene" uid="uid://jtp6oj42f513" path="res://Army/Units/Helicopter/helicopter.tscn" id="13_26uyv"]
-[ext_resource type="PackedScene" uid="uid://0374he4d84em" path="res://Faction1/Units/Enemy/Standard/enemy_unit.tscn" id="13_awrha"]
 [ext_resource type="PackedScene" uid="uid://cyr37pramegdy" path="res://Army/Units/Truck/truck.tscn" id="14_dqu5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w47uh"]
@@ -469,6 +467,8 @@ position = Vector2(4505, 1513)
 [node name="Truck6" parent="Enemy Units" instance=ExtResource("14_dqu5g")]
 position = Vector2(4677, 1328)
 
+[node name="Bullets" type="Node2D" parent="."]
+
 [node name="Faction 1 Base" parent="." instance=ExtResource("8_eidgh")]
 position = Vector2(0, 1100)
 
@@ -476,17 +476,5 @@ position = Vector2(0, 1100)
 position = Vector2(10358, 1498)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("12_h2aik")
-
-[node name="Enemy Unit" parent="." instance=ExtResource("13_awrha")]
-position = Vector2(1627, 1314)
-
-[node name="Infantry" parent="." instance=ExtResource("11_xw5lg")]
-position = Vector2(1627, 1566)
-
-[node name="Unit" parent="." instance=ExtResource("10_kcyjf")]
-position = Vector2(1347, 1341)
-
-[node name="Unit2" parent="." instance=ExtResource("10_kcyjf")]
-position = Vector2(1355, 1589)
 
 [connection signal="area_selected" from="Camera" to="." method="_on_camera_area_selected"]

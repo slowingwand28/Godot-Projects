@@ -15,6 +15,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if currTime >= maxTime:
 		resourceCollected()
+	
+	if Game.friendly_pop > 25:
+		maxTime = 100
+	else:
+		maxTime = 50
 
 func _on_timer_timeout() -> void:
 	currTime += 1

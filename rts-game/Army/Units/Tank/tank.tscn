@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c57xd1g268wi7"]
+[gd_scene load_steps=6 format=3 uid="uid://c57xd1g268wi7"]
 
+[ext_resource type="Script" uid="uid://daycka3hxpv3n" path="res://Army/Units/Infantry/army_units.gd" id="1_hrhx1"]
 [ext_resource type="Texture2D" uid="uid://dk6hr1ycbum4a" path="res://Army/Units/Tank/Tenk.png" id="1_tabw7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrhx1"]
@@ -8,7 +9,17 @@ radius = 141.032
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfjgt"]
 radius = 555.014
 
-[node name="Tank" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrhx1"]
+bg_color = Color(0.796078, 0.180392, 0.164706, 1)
+
+[node name="Tank" type="CharacterBody2D" groups=["Enemy Units"]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_hrhx1")
+max_health = 16
+bullet_damage = 8
+bullet_speed = 2000
+reload_time = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 26)
@@ -19,15 +30,23 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_tabw7")
 
 [node name="Range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" groups=["Enemy Units"]]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 position = Vector2(-1, 26)
 shape = SubResource("CircleShape2D_yfjgt")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = -147.0
+offset_top = -144.0
+offset_right = 149.0
+offset_bottom = -117.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_hrhx1")
+show_percentage = false
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

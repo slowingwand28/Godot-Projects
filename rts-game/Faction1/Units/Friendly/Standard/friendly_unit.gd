@@ -84,12 +84,12 @@ func _on_mouse_exited() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy Units"):
 		enemies.append(body)
-		print("enemy detected")
+		
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Enemy Units"):
 		enemies.erase(body)
-		print("enemy lost")
+		
 
 func fighting():
 	if len(enemies) > 0:
@@ -101,6 +101,3 @@ func _on_timer_timeout() -> void:
 
 func first_move():
 	target = rallyPoint
-
-func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
-	velocity = safe_velocity

@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://dgskwgmhl0lt1" path="res://Faction1/Units/Friendly/Standard/friendly_unit.gd" id="1_c62ov"]
 [ext_resource type="Texture2D" uid="uid://c3om522xxxy4c" path="res://Faction1/Units/Friendly/Standard/lizard-grunt.png" id="3_837qu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_07gmc"]
-radius = 38.5519
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07gmc"]
+resource_local_to_scene = true
+size = Vector2(63, 92)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj4xo"]
-radius = 98.0
+radius = 82.0061
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ap0e"]
 bg_color = Color(0.173542, 0.643465, 0.886506, 1)
@@ -25,10 +26,11 @@ y_sort_enabled = true
 collision_mask = 7
 input_pickable = true
 script = ExtResource("1_c62ov")
+max_health = 6
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("CircleShape2D_07gmc")
+position = Vector2(-2.5, 3)
+shape = SubResource("RectangleShape2D_07gmc")
 
 [node name="Unit Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
